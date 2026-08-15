@@ -15,12 +15,12 @@
     <header>
         <h1>Welcome to My Website</h1>
         <hr>
-        <nav aria-label="Main Navigation">
+        <nav aria-label="primary_navigation">
             <ul>
-                <li><a href="index.html#section1">Section1</a></li>
-                <li><a href="index.html#section2">Section2</a></li>
+                <li><a href="#section1">Section1</a></li>
+                <li><a href="#section2">Section2</a></li>
                 <li><a href="about_me.html">About Me</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -117,34 +117,36 @@
                 </details>
 
             </aside>
+            <hr>
             <table>
                 <caption>My Skills and Experience</caption>
                 <thead>
                     <tr>
-                        <th scope="col">Skill</th>
-                        <th scope="col">Experience (Years)</th>
+                        <th scope="col" id="skill">Skill</th>
+                        <th scope="col" id="experience">Experience (Years)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">HTML</th>   
+                        <th scope="row" id="skillHtml">HTML</th>
+                        <!--<th> &nbsp;</th> for space-->
                         <td>5</td>
                     </tr>
                     <tr>
-                        <td>CSS</td>
+                        <td scope="row" id="skillCss">CSS</td>
                         <td>4</td>
                     </tr>
                     <tr>
-                        <td>JavaScript</td>
+                        <td scope="row" id="skillJavaScript">JavaScript</td>
                         <td>3</td>
                     </tr>
                     <tr>
-                        <td>React</td>
+                        <td scope="row" id="skillReact">React</td>
                         <td>2</td>
                     </tr>
                     <tr>
                         <td colspan="2">To add</td>
-                        
+
                     </tr>
                 </tbody>
                 <tfoot>
@@ -153,6 +155,56 @@
                     </tr>
                 </tfoot>
             </table>
+        </article>
+        <hr>
+        <article id="contact">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="post">
+                <fieldset>
+                    <legend>Contact Form</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Deepa" required autofocus><br><br>
+                <label for="ageRange">Age Range:</label>
+                <input type="number" id="ageRange" name="ageRange" min="18" max="100" value="25" step="5"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" aria-placeholder="Enter your email" required
+                    autocomplete="on"><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    placeholder="123-456-7890" required><br><br>
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label><br><br>
+                <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                <label for="subscribe">Subscribe to newsletter</label><br><br>
+                
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <option value="india" selected>India</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="australia">Australia</option>
+                </select><br><br>
+                <label for="hobbies">Hobbies:</label><br>
+                <input type="text" name="hobbies" placeholder="Enter your hobbies" required list="hobby-list"><br><br>
+                <datalist id="hobby-list">
+                    <option value="Reading">
+                    <option value="Traveling">
+                    <option value="Cooking">
+                    <option value="Sports">
+                    <option value="Music">
+                </datalist><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+                </fieldset>
+                <!--<input type="password"-->
+
+            </form>
         </article>
     </main>
     <p>Back to <a href="index.html#section1">Section1</a> or <a href="index.html#section2">Section2</a></p>
