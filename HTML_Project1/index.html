@@ -105,6 +105,7 @@
             </dl>
             <aside>
                 <details>
+                    <!-- To validate the code go to https://validator.w3.org/ and paste the URL of your page or code-->
                     <summary>Click to expand for more information</summary>
                     <p>This is additional information that can be revealed by clicking the summary above.</p>
                     <h4>Related Links</h4>
@@ -159,19 +160,20 @@
         <hr>
         <article id="contact">
             <h2>Contact Me</h2>
-            <form action="submit_form.php" method="post">
+            <form action="https://httpbin.org/post" method="post">
                 <fieldset>
                     <legend>Contact Form</legend>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Deepa" required autofocus><br><br>
                 <label for="ageRange">Age Range:</label>
-                <input type="number" id="ageRange" name="ageRange" min="18" max="100" value="25" step="5"><br><br>
+                <input type="number" id="ageRange" name="ageRange" min="18" max="100" value="25" step="10"><br><br>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" aria-placeholder="Enter your email" required
                     autocomplete="on"><br><br>
                 <label for="phone">Phone:</label>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     placeholder="123-456-7890" required><br><br>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
                 <label for="gender">Gender:</label>
                 <input type="radio" id="male" name="gender" value="male" required>
                 <label for="male">Male</label>
@@ -179,7 +181,7 @@
                 <label for="female">Female</label><br><br>
                 <input type="checkbox" id="subscribe" name="subscribe" value="yes">
                 <label for="subscribe">Subscribe to newsletter</label><br><br>
-                
+
                 <label for="country">Country:</label>
                 <select id="country" name="country" required>
                     <option value="">Select your country</option>
@@ -198,11 +200,12 @@
                     <option value="Music">
                 </datalist><br><br>
                 <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">
+                <textarea id="message" name="message" placeholder="Type your message " rows="4" cols="50" required></textarea><br><br>
+                <button type="submit">Submit</button>
+                 <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Send</button>
+                <button type="reset">Reset</button>
                 </fieldset>
-                <!--<input type="password"-->
+            
 
             </form>
         </article>
