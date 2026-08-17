@@ -1,0 +1,45 @@
+/*  MDN website https://developer.mozilla.org/en-US/docs/Web/CSS gives more details on css  */
+/* CSS error validation website w3c https://jigsaw.w3.org/css-validator/ gives more details on css validation  */
+
+/* *{ /* * is a universal selector - applies generally to all elements used when css reset, but not generally recommended */
+  /*  
+    margin:  2px;
+    padding: 5px;
+} */
+html{
+    background-color: rgb(186, 171, 192);
+    width: 100%; /* Here 100% is relative unit of measurement this shd be used mostly as best practice */
+}
+body{ /* here inheritance is applied to all elements inside body element */
+    font-family: Arial, sans-serif;
+}
+
+button, textarea, input{
+    font:inherit; /* here inheritance is applied explicitly becoz these elements don't inherit from body element */
+}
+p { /* p is a element selector - applies generally*/
+    color: rgb(74, 74, 219);
+    font-size: 20px;
+}
+
+p span { /* span is a element selector - applies only when span is inside a p element but generally this is not good practice */
+    color: rgb(74, 74, 219);
+    font-size: 20px; /*px is absolute unit of measurement this is not best practice instead use relative units like percentage,rem, em for text and px can be used for border lines */
+    background-color: rgb(192, 249, 230);
+}
+h1,h2,h3 { /* grouping element selectors - applies generally*/
+    color: rgba(74, 74, 219, 0.8);/* here rgba (alpha) is used to give transparency to the color */
+   
+    
+}
+
+/* coolors.co website https://coolors.co/ gives more details on how to mix and match colors  */
+
+.gray { /* gray is a class selector - applies to specific classes*/
+    color: #808080;/* here hex color code is used to give gray color */
+}
+
+#second { /* second is a id selector - applies to very specific to particular id only it will not be repeated*/
+    font-style: italic;
+    color: hsl(240, 50%, 60%) /* here hsl is used to give color with hue, saturation and lightness values */
+}
