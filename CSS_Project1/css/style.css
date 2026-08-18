@@ -2,44 +2,82 @@
 /* CSS error validation website w3c https://jigsaw.w3.org/css-validator/ gives more details on css validation  */
 
 /* *{ /* * is a universal selector - applies generally to all elements used when css reset, but not generally recommended */
-  /*  
+/*  
     margin:  2px;
     padding: 5px;
 } */
-html{
+html {
     background-color: rgb(186, 171, 192);
-    width: 100%; /* Here 100% is relative unit of measurement this shd be used mostly as best practice */
-}
-body{ /* here inheritance is applied to all elements inside body element */
-    font-family: Arial, sans-serif;
+    width: 100%;
+    /* Here 100% is relative unit of measurement this shd be used mostly as best practice */
+    box-sizing: content-box; /* content-box is default value of box-sizing property, but it can be changed to border-box which includes padding and border in the width and height of the element */
 }
 
-button, textarea, input{
-    font:inherit; /* here inheritance is applied explicitly becoz these elements don't inherit from body element */
+body {
+    /* here inheritance is applied to all elements inside body element */
+    border: 2px solid rgb(74, 74, 219);
+    /* here px is absolute unit of measurement px can be used for border lines */
+    font-family: Arial, sans-serif;
+    padding: 2em;
+    /* here em is relative unit of measurement, but rem is beter than em for font, but em can be used for other elements like padding, margin etc. so here if the parent element's font size changes, this will scale accordingly twice of its parents size */
+    min-height: 100vh;
+    /* here vh height will be minimum 100% of screen height and as the content grows, it will expand */
+    width: 80vw;
+    /* here vw is relative unit of measurement viewport's width changes, this will scale accordingly to half of its size viewport's width. But vw,vh are generally becoz when the content is long the page gets scroll bar on the side , but vw will also have scrollbar at the bottom aswell. Instead we can use % which results in same action*/
 }
-p { /* p is a element selector - applies generally*/
+
+button,
+textarea,
+input {
+    font: inherit;
+    /* here inheritance is applied explicitly becoz these elements don't inherit from body element */
+}
+
+p {
+    /* p is a element selector - applies generally*/
+    color: rgb(74, 74, 219);
+    font-size: 2 rem;
+    /* here rem (root element) is relative unit of measurement this shd be used mostly as best practice , so here if the root element's font size changes, this will scale accordingly twice of its size */
+    width: 70ch;
+    /* here ch is relative unit of measurement where after 50 characters the text will wrap */
+}
+
+p span {
+    /* span is a element selector - applies only when span is inside a p element but generally this is not good practice */
     color: rgb(74, 74, 219);
     font-size: 20px;
-}
-
-p span { /* span is a element selector - applies only when span is inside a p element but generally this is not good practice */
-    color: rgb(74, 74, 219);
-    font-size: 20px; /*px is absolute unit of measurement this is not best practice instead use relative units like percentage,rem, em for text and px can be used for border lines */
+    /*px is absolute unit of measurement this is not best practice instead use relative units like percentage,rem, em for text and px can be used for border lines */
     background-color: rgb(192, 249, 230);
 }
-h1,h2,h3 { /* grouping element selectors - applies generally*/
-    color: rgba(74, 74, 219, 0.8);/* here rgba (alpha) is used to give transparency to the color */
-   
-    
+
+h1,
+h2,
+h3 {
+    /* grouping element selectors - applies generally*/
+    color: rgba(74, 74, 219, 0.8);
+    /* here rgba (alpha) is used to give transparency to the color */
+
+
 }
 
 /* coolors.co website https://coolors.co/ gives more details on how to mix and match colors  */
 
-.gray { /* gray is a class selector - applies to specific classes*/
-    color: #808080;/* here hex color code is used to give gray color */
+.gray {
+    /* gray is a class selector - applies to specific classes*/
+    color: #6c4b4b;
+    /* here hex color code is used to give gray color */
 }
 
-#second { /* second is a id selector - applies to very specific to particular id only it will not be repeated*/
+.container {
+    /* container is a class selector - applies to specific classes*/
+    border: 2px solid rgb(74, 74, 219);
+    padding: 1em; /* em depends on the font size of the element, so if the font size of the element changes, the padding will change accordingly . Since no font size is specified for the container, it will inherit from its parent -default font size is 16px */
+    margin: 1em;
+}
+
+#second {
+    /* second is a id selector - applies to very specific to particular id only it will not be repeated*/
     font-style: italic;
-    color: hsl(240, 50%, 60%) /* here hsl is used to give color with hue, saturation and lightness values */
+    color: hsl(240, 50%, 60%)
+        /* here hsl is used to give color with hue, saturation and lightness values */
 }
