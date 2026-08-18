@@ -1,5 +1,37 @@
 /*  MDN website https://developer.mozilla.org/en-US/docs/Web/CSS gives more details on css  */
-/* CSS error validation website w3c https://jigsaw.w3.org/css-validator/ gives more details on css validation  */
+/* CSS error validation website w3c https://jigsaw.w3.org/css-validator/ gives more details on css validation  
+
+https://www.youtube.com/watch?v=GlEY28YLffs -> Balachandra youtube channel for css tutorials
+
+(0:04:56) Chapter 1: Start Here
+(0:34:43) Chapter 2: Selectors -> CSS selectors are patterns used to select and style HTML elements. There are several types of selectors, including element selectors, class selectors, ID selectors, attribute selectors, pseudo-class selectors, and pseudo-element selectors. Element selectors target specific HTML tags, while class and ID selectors target elements with specific class or ID attributes. Attribute selectors target elements based on their attributes, and pseudo-class and pseudo-element selectors target elements based on their state or position in the document. Understanding how to use these selectors effectively is essential for creating well-designed and visually appealing web pages.
+(1:03:14) Chapter 3: Colors -> CSS colors are used to style the text, background, and other elements on a web page. There are several ways to specify colors in CSS, including using color names, hexadecimal values, RGB values, HSL values, and RGBA values. Color names are predefined color names that can be used directly in CSS. Hexadecimal values are six-digit codes that represent colors using a combination of red, green, and blue values. RGB values specify colors using a combination of red, green, and blue values on a scale of 0 to 255. HSL values specify colors using hue, saturation, and lightness values. RGBA values are similar to RGB values but also include an alpha value for transparency. Understanding how to use these different color specifications is important for creating visually appealing web pages.
+(1:24:46) Chapter 4: Units & Sizes -> CSS units and sizes are used to specify the dimensions of elements on a web page. There are several types of units in CSS, including absolute units, relative units, and viewport units. Absolute units include pixels (px), points (pt), and inches (in), which are fixed in size and do not change based on the size of the viewport or parent element. Relative units include em, rem, percentages (%), and ex, which are based on the size of the parent element or root element. Viewport units include vw, vh, vmin, and vmax, which are based on the size of the viewport. Understanding how to use these different units effectively is important for creating responsive and visually appealing web pages.
+(1:58:59) Chapter 5: Box Model -> The box model is a fundamental concept in CSS that describes how elements are rendered on a web page. It consists of four main components: content, padding, border, and margin. The content is the actual text or image inside the element, while the padding is the space between the content and the border. The border is the line that surrounds the element, and the margin is the space between the element and other elements on the page. Understanding the box model is essential for creating well-designed and visually appealing web pages.
+(2:35:55) Chapter 6: Typography -> Is a way to style text and fonts in web design. It includes properties such as font-family, font-size, line-height, letter-spacing, and text-align. Typography is important for creating a visually appealing and readable website. It can also be used to convey a certain mood or tone through the use of different fonts and styles.
+
+(2:59:15) Chapter 7: Styling Links -> CSS provides several properties to style links, including color, text-decoration, font-weight, and hover effects. The color property can be used to change the color of the link text, while the text-decoration property can be used to add or remove underlines. The font-weight property can be used to make the link text bold or normal. Additionally, CSS allows for the use of pseudo-classes such as :hover and :active to create interactive effects when a user hovers over or clicks on a link. By using these properties and pseudo-classes, designers can create visually appealing and user-friendly links that enhance the overall user experience of a website.
+
+(3:19:08) Chapter 8: List Styles -> CSS provides several properties to style lists, including list-style-type, list-style-image, and list-style-position. The list-style-type property can be used to change the bullet or numbering style of the list items, while the list-style-image property can be used to replace the default bullet with a custom image. The list-style-position property can be used to control the position of the bullet or number relative to the list item. Additionally, CSS allows for the use of pseudo-classes such as :first-child and :last-child to style specific list items. By using these properties and pseudo-classes, designers can create visually appealing and user-friendly lists that enhance the overall user experience of a website.
+
+(3:38:52) Chapter 9: Mini Project
+
+(3:53:22) Chapter 10: Display -> CSS display property is used to control the layout and visibility of HTML elements on a web page. It determines how an element is displayed in relation to other elements, and can be set to various values such as block, inline, inline-block, flex, grid, none, and more. The display property can also be used to hide or show elements on a page, and can be combined with other CSS properties such as position, float, and z-index to create complex layouts. Understanding how to use the display property effectively is essential for creating well-designed and visually appealing web pages.
+
+(4:17:37) Chapter 11: Floats -> CSS float property is used to position an element to the left or right of its container, allowing other elements to wrap around it. It can be used to create multi-column layouts, image galleries, and other types of designs. However, using floats can also cause layout issues if not used properly, such as overlapping elements or collapsing parent containers. To avoid these issues, it is important to clear floats using the clear property or by using a clearfix hack. Additionally, CSS has introduced newer layout techniques such as flexbox and grid that provide more control over positioning and layout without relying on floats. Understanding how to use the float property effectively is important for creating well-designed and visually appealing web pages.
+(4:35:21) Chapter 12: Columns -> CSS columns property is used to create multi-column layouts for text and other content on a web page. It allows designers to specify the number of columns, the width of each column, and the gap between columns. The columns property can be applied to block-level elements such as paragraphs, divs, and sections, and can also be combined with other CSS properties such as text-align and line-height to create visually appealing layouts. Additionally, CSS provides several other properties related to columns, such as column-span, column-fill, and column-rule, which allow for more control over the layout and appearance of multi-column content. Understanding how to use the columns property effectively is important for creating well-designed and visually appealing web pages.
+(5:01:50) Chapter 13: Position -> CSS position property is used to control the positioning of HTML elements on a web page. It allows designers to specify how an element should be positioned in relation to its parent container or the viewport. The position property can be set to various values such as static, relative, absolute, fixed, and sticky. Each value has its own unique behavior and can be combined with other CSS properties such as top, bottom, left, right, and z-index to create complex layouts. Understanding how to use the position property effectively is essential for creating well-designed and visually appealing web pages.
+(5:44:54) Chapter 14: Flexbox -> CSS flexbox is a layout module that allows designers to create flexible and responsive layouts for web pages. It provides a set of properties that can be applied to a container element and its child elements, allowing for easy alignment, distribution, and sizing of content. The flexbox model is based on the concept of a flexible container that can adjust its size and position based on the available space and the content within it. Some of the key properties of flexbox include display, flex-direction, justify-content, align-items, and flex-wrap. Understanding how to use flexbox effectively is essential for creating well-designed and visually appealing web pages that work across different screen sizes and devices.
+(6:17:52) Chapter 15: Grid Layout -> CSS grid layout is a powerful layout system that allows designers to create complex and responsive grid-based designs for web pages. It provides a set of properties that can be applied to a container element and its child elements, allowing for easy alignment, distribution, and sizing of content. The grid layout model is based on the concept of a two-dimensional grid that can be divided into rows and columns, with each cell in the grid able to contain one or more elements. Some of the key properties of grid layout include display, grid-template-rows, grid-template-columns, grid-gap, justify-items, and align-items. Understanding how to use grid layout effectively is essential for creating well-designed and visually appealing web pages that work across different screen sizes and devices.
+(6:55:36) Chapter 16: Images -> CSS images are used to enhance the visual appeal of web pages and can be styled using various CSS properties. Some of the key properties for styling images include width, height, border, border-radius, box-shadow, opacity, and filter. The width and height properties can be used to resize images, while the border and border-radius properties can be used to add borders and rounded corners. The box-shadow property can be used to add shadows to images, while the opacity property can be used to adjust the transparency of images. The filter property can be used to apply various visual effects to images, such as grayscale, blur, and brightness. Understanding how to use these properties effectively is essential for creating visually appealing web pages that incorporate images in a meaningful way.
+(7:55:58) Chapter 17: Media Queries -> CSS media queries are used to create responsive web designs that adapt to different screen sizes and devices. They allow designers to apply different styles based on the characteristics of the device or viewport, such as its width, height, orientation, and resolution. Media queries can be used to create breakpoints in a design, where the layout and styling of elements change based on the size of the viewport. Some of the key properties for using media queries include @media, min-width, max-width, and orientation. Understanding how to use media queries effectively is essential for creating well-designed and visually appealing web pages that work across different screen sizes and devices.
+(8:27:01) Chapter 18: Card Project
+(8:53:01) Chapter 19: Pseudo -> CSS pseudo-classes and pseudo-elements are used to apply styles to specific states or parts of HTML elements. Pseudo-classes are used to target elements based on their state, such as :hover, :focus, :active, :first-child, and :last-child. Pseudo-elements are used to target specific parts of an element, such as ::before, ::after, ::first-letter, and ::first-line. These pseudo-classes and pseudo-elements allow designers to create more dynamic and interactive web designs by applying styles based on user interactions or specific parts of an element. Understanding how to use pseudo-classes and pseudo-elements effectively is essential for creating well-designed and visually appealing web pages.
+(9:14:06) Chapter 20: Variables -> CSS variables, also known as custom properties, are a way to define reusable values in CSS. They allow designers to create a variable once and use it throughout their stylesheets, making it easier to maintain and update styles. CSS variables are defined using the -- prefix and can be accessed using the var() function. For example, a variable for a primary color can be defined as --primary-color: #3498db; and then used in other styles as color: var(--primary-color);. CSS variables can also be scoped to specific elements or inherited by child elements, providing flexibility in how they are used. Understanding how to use CSS variables effectively is essential for creating well-organized and maintainable web designs.
+(9:48:18) Chapter 21: Functions -> CSS functions are built-in methods that allow designers to perform calculations, manipulate values, and apply transformations to CSS properties. Some common CSS functions include calc(), which allows for mathematical calculations; rgb() and rgba(), which define colors using red, green, blue, and alpha values; hsl() and hsla(), which define colors using hue, saturation, lightness, and alpha values; and url(), which is used to reference external resources such as images or fonts. Other functions include min(), max(), clamp(), and var(), which provide additional flexibility in defining styles. Understanding how to use CSS functions effectively is essential for creating dynamic and responsive web designs.
+(10:21:44) Chapter 22: Animations -> CSS animations are a way to create dynamic and interactive web designs by animating the properties of HTML elements over time. They allow designers to define keyframes, which specify the starting and ending states of an animation, as well as intermediate states. CSS animations can be applied to various properties, such as position, size, color, opacity, and transform. The animation property is used to control the duration, timing function, delay, iteration count, and direction of the animation. Additionally, CSS transitions can be used to create smooth changes between different states of an element when a user interacts with it. Understanding how to use CSS animations effectively is essential for creating engaging and visually appealing web pages.
+(11:24:10) Chapter 23: Organization -> CSS organization is the practice of structuring and managing CSS code in a way that is maintainable, scalable, and easy to understand. This can be achieved through various techniques, such as using a consistent naming convention for classes and IDs, grouping related styles together, and separating styles into different files based on their purpose or component. Additionally, using CSS preprocessors like Sass or Less can help organize code by allowing for variables, mixins, and nesting. Commenting code and following best practices for writing clean and efficient CSS are also important aspects of organization. Understanding how to organize CSS effectively is essential for creating well-structured and maintainable web designs. 
+(11:44:04) Chapter 24: Final Project*/
 
 /* *{ /* * is a universal selector - applies generally to all elements used when css reset, but not generally recommended */
 /*  
@@ -40,6 +72,8 @@ p {
     /* here rem (root element) is relative unit of measurement this shd be used mostly as best practice , so here if the root element's font size changes, this will scale accordingly twice of its size */
     width: 70ch;
     /* here ch is relative unit of measurement where after 50 characters the text will wrap */
+    text-align: justify;
+    text-indent: 2em;
 }
 
 p span {
@@ -56,8 +90,32 @@ h3 {
     /* grouping element selectors - applies generally*/
     color: rgba(74, 74, 219, 0.8);
     /* here rgba (alpha) is used to give transparency to the color */
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    /* we can add font family externally by importing from google fonts or adobe fonts by link or import , but here we are using system fonts */
 
+}
 
+a{ 
+    /* a is a element selector - here we are styling the links */
+    color: rgb(74, 74, 219);
+    text-decoration: none;
+}
+/* All the below are pseudo-class selectors - applies to links in different states, the specificity is same for all of them and is based on the order of the selectors. So be careful with the order. If you put hover before visited then after visiting a link, if you hover on the visited link the hover property will not be applied */
+a:visited{
+    /* a:visited is a pseudo-class selector - applies to visited links */
+    color: rgb(195, 90, 151);
+}
+
+a:active{
+    /* a:active is a pseudo-class selector - applies to active links */
+    color: rgb(89, 154, 92);
+}
+
+a:hover{
+    /* a:hover is a pseudo-class selector - applies to links when hovered */
+    color: rgb(151, 140, 39);
+    text-decoration: underline;
 }
 
 /* coolors.co website https://coolors.co/ gives more details on how to mix and match colors  */
@@ -66,6 +124,7 @@ h3 {
     /* gray is a class selector - applies to specific classes*/
     color: #6c4b4b;
     /* here hex color code is used to give gray color */
+    line-height: 2.5;
 }
 
 .container {
@@ -73,6 +132,19 @@ h3 {
     border: 2px solid rgb(74, 74, 219);
     padding: 1em; /* em depends on the font size of the element, so if the font size of the element changes, the padding will change accordingly . Since no font size is specified for the container, it will inherit from its parent -default font size is 16px */
     margin: 1em;
+    outline: 2px solid rgb(145, 240, 233);/* outline is a line drawn outside the element's border, it is used to highlight the element, it does not take up space, so it does not affect the layout of the page */
+}
+
+.circle {
+    /* circle is a class selector - applies to specific classes*/
+    margin: 1em auto; /* here auto is used to center the element horizontally */
+    border-radius: 50%;
+    /* here border-radius is used to make the element round */
+    width: 100px;
+    height: 100px;
+    background-color: rgb(195, 219, 74);
+    outline: 5px dotted rgb(31, 161, 31);
+    outline-offset: 5px; /* here outline-offset is used to offset the outline from the element's border */
 }
 
 #second {
