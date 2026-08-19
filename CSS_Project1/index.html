@@ -15,20 +15,29 @@
 </head>
 
 <body>
-    <!--Inline CSS gets first priority-->
-    <h1 style="color: rgba(169, 23, 55, 0.967); text-align: center;">Welcome to My CSS Website</h1>
-    <p>This is a simple CSS website.</p>
     <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <!--Inline CSS gets first priority-->
+        <h1 style="color: rgba(169, 23, 55, 0.967); text-align: center;">Welcome to My CSS Website</h1>
+    </header>
+    <main>
+
+        <p>This is a simple CSS website.</p>
+
         <h2>About CSS</h2>
         <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written
             in HTML or XML. It allows you to control the layout, colors, fonts, and other visual aspects of your web
             pages.</p>
-    </header>
-    <main>
         <article>
             <h2>Why Use CSS?</h2>
             <p>CSS provides several benefits, including:</p>
-            <ul>
+            <ul class="main-list">
                 <li>Separation of content and presentation</li>
                 <li>Improved website performance</li>
                 <li>Greater control over layout and design</li>
@@ -45,6 +54,23 @@
                 <li>Responsive Design</li>
                 <li>Animations and Transitions</li>
             </ol>
+        </article>
+        <article>
+            <h2>CSS Syntax</h2>
+            <p class="gray">CSS syntax consists of selectors and declarations. A selector targets an HTML element, and a
+                declaration defines the style to be applied.</p>
+            <pre>
+                <code>
+                    selector {
+                        property: value;
+                    }
+                </code>
+            </pre>
+            <ul>
+                <li>Selector: The HTML element you want to style (e.g., h1, p, .class, #id)</li>
+                <li>Property: The aspect of the element you want to change (e.g., color, font-size, margin)</li>
+                <li>Value: The specific setting for the property (e.g., red, 16px, 10px)</li>
+            </ul>
         </article>
         <article>
             <h2>CSS Resources</h2>
