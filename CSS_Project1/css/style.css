@@ -182,6 +182,33 @@ p::first-letter {
   line-height: 2.5;
 }
 
+.floatEx {
+  /* floatEx is a class selector - applies to specific classes*/
+  float: right;
+  /* here float is used to float the element to the right so that the text wraps around it */
+  width: 40%;
+  /* here % is relative unit of measurement this shd be used mostly as best practice */
+  margin: 1em;
+  padding: 0.5em;
+  border: 2px solid rgb(74, 74, 219);
+  display:flow-root; /* here flow-root is used to create a new block formatting context so that the floated element does not affect the layout of the parent element. This is used instead of using a clearfix and clear in modern coding */
+}
+
+/*clear is used to clear the float so that the next element does not wrap around the floated element, we can use clear: left, clear: right, clear: both */
+.clear {
+    /* clear is a class selector - applies to specific classes*/
+    clear: both;
+    /* here both is used to clear both left and right floated elements */
+    margin: 1em;
+    padding: 0.5em;
+    border: 2px solid rgb(74, 74, 219);
+    }
+.clearfix::after {
+  /* clearfix is a class selector - applies to specific classes*/
+  content: "";
+  display: table;
+  clear: both;/* here both is used to clear both left and right floated elements */
+}
 .container {
   /* container is a class selector - applies to specific classes*/
   border: 2px solid rgb(74, 74, 219);
