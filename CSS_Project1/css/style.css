@@ -213,7 +213,7 @@ p::first-letter {
   /* container is a class selector - applies to specific classes*/
   border: 2px solid rgb(74, 74, 219);
   padding: 1em; /* em depends on the font size of the element, so if the font size of the element changes, the padding will change accordingly . Since no font size is specified for the container, it will inherit from its parent -default font size is 16px */
-  margin: 1em;
+  margin: 1em;/*margin collapse is a phenomenon where the margin of an element collapses with the margin of its parent or sibling elements, resulting in a smaller margin than expected. This can happen when the margins of adjacent elements overlap, and the larger margin takes precedence. To avoid margin collapse, we can use padding instead of margin, or we can use a clearfix to clear the float and create a new block formatting context. */
   outline: 2px solid rgb(145, 240, 233); /* outline is a line drawn outside the element's border, it is used to highlight the element, it does not take up space, so it does not affect the layout of the page */
 }
 
@@ -228,6 +228,82 @@ p::first-letter {
   outline: 5px dotted rgb(31, 161, 31);
   outline-offset: 5px; /* here outline-offset is used to offset the outline from the element's border */
 }
+
+.column-section {
+  /* column-section is a class selector - applies to specific classes*/
+  column-count: 3;
+  /* here column-count is used to specify the number of columns */
+  column-gap: 1em;
+  /* here column-gap is used to specify the gap between columns */
+  column-rule: 2px solid rgb(74, 74, 219);
+  /* here column-rule is used to specify the rule between columns */
+  
+  p {
+    /* p is a element selector - applies to all p elements inside the column-section */
+    text-align: justify;
+    /* here text-align is used to justify the text in the columns */
+    width:auto
+  }
+
+  break-inside: avoid;
+  /* here break-inside is used to avoid breaking the columns inside the element */
+  break-after: avoid;
+  /* here break-after is used to avoid breaking the columns after the element */
+}
+
+.quote {
+  /* quote is a class selector - applies to specific classes*/
+  font-style: italic;
+  color: rgb(11, 79, 26);
+  text-align: center;
+  font-size: 1.2em;
+  width: 60%;
+  margin: 1em auto; /* here auto is used to center the element horizontally */
+}
+
+.quote .nowrap {
+  /* nowrap is a class selector - applies to specific classes*/
+  white-space: nowrap;
+  /* here white-space is used to prevent the text from wrapping */
+  border: none;
+  background-color: transparent;
+
+}
+
+.outer-container {
+  /* outer-container is a class selector - applies to specific classes*/
+  display: flex;
+  /* here display is used to create a flex container */
+  justify-content: space-between;
+  /* here justify-content is used to space the items evenly */
+  align-items: center;
+  /* here align-items is used to align the items vertically */
+  padding: 1em;
+  border: 2px solid rgb(74, 74, 219);
+/*   min-width: 85vw;
+  min-height: 30vh; */
+}
+
+.inner-container {
+  /* inner-container is a class selector - applies to specific classes*/
+ 
+  padding: 1em;
+  border: 2px solid rgb(74, 74, 219);
+  width: 70vw;
+  height: 70vh;
+}
+
+.box{
+  
+    width: 200px;
+    height: auto;
+    border: 2px solid rgb(74, 74, 219);
+} 
+
+.absolute{
+  width: 200px;
+}
+
 
 
 #second {
