@@ -45,6 +45,7 @@ html {
   width: 100%;
   /* Here 100% is relative unit of measurement this shd be used mostly as best practice */
   box-sizing: content-box; /* content-box is default value of box-sizing property, but it can be changed to border-box which includes padding and border in the width and height of the element */
+  /* scroll-behaviour: smooth; This property makes the moves from scrolling smoother*/
 }
 
 body {
@@ -282,6 +283,7 @@ p::first-letter {
   border: 2px solid rgb(74, 74, 219);
 /*   min-width: 85vw;
   min-height: 30vh; */
+   position:relative; 
 }
 
 .inner-container {
@@ -291,6 +293,7 @@ p::first-letter {
   border: 2px solid rgb(74, 74, 219);
   width: 70vw;
   height: 70vh;
+ 
 }
 
 .box{
@@ -301,10 +304,34 @@ p::first-letter {
 } 
 
 .absolute{
-  width: 200px;
+  background-color: bisque;
+  position: absolute;/* Absolute moves not based on the immediate parent but instead which container is said as relative explicitly, if none of the container is set as relative it will take body as its reference container*/
+  top: 0px;
+  left:0px;
+  z-index: 1;/* Here z-index mentions how many layers should be come in front*/
+
 }
 
+.relative{
+  background-color: beige;
+  position: relative;/* Relative moves based on the immediate parents reference no need to mention relative in its parent*/
+  top: 100px;
+  left: 100px;
+}
 
+.fixed{
+  background-color: chocolate;
+  position: fixed;/* When position is fixed it always fixed to the page even when we scroll it will be unmovable from the mentioned pixels */
+  top: 200px;
+  left:50px;
+}
+
+.sticky{
+  background-color: burlywood;
+  position: sticky; /*Sticky will be seen in the screen like fixed but the differnce is when its container(parent) moves away from screen it also disappears*/
+  top:0px;
+  left:100px;
+}
 
 #second {
   /* second is a id selector - applies to very specific to particular id only it will not be repeated*/
