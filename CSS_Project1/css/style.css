@@ -144,20 +144,21 @@ ul.main-list {
   color: rgb(213, 59, 71);
 }
 
-
-ul.nav-list{
-    text-align: right;
-    list-style-type: none;
-    background-color: rgb(195, 195, 230);
-    display: flex;
-    padding: 1em;
-    column-gap: 1em;
-    justify-content: flex-end; 
-    li a:hover, li a:focus, li a:active {
-        color: rgb(180, 21, 74);
-        text-decoration: underline;
-    }   
-} 
+ul.nav-list {
+  text-align: right;
+  list-style-type: none;
+  background-color: rgb(195, 195, 230);
+  display: flex;
+  padding: 1em;
+  column-gap: 1em;
+  justify-content: flex-end;
+  li a:hover,
+  li a:focus,
+  li a:active {
+    color: rgb(180, 21, 74);
+    text-decoration: underline;
+  }
+}
 
 /*psudo elements are used to style specific parts of an element, like first letter, first line, before and after the element, etc. */
 p::first-letter {
@@ -192,29 +193,29 @@ p::first-letter {
   margin: 1em;
   padding: 0.5em;
   border: 2px solid rgb(74, 74, 219);
-  display:flow-root; /* here flow-root is used to create a new block formatting context so that the floated element does not affect the layout of the parent element. This is used instead of using a clearfix and clear in modern coding */
+  display: flow-root; /* here flow-root is used to create a new block formatting context so that the floated element does not affect the layout of the parent element. This is used instead of using a clearfix and clear in modern coding */
 }
 
 /*clear is used to clear the float so that the next element does not wrap around the floated element, we can use clear: left, clear: right, clear: both */
 .clear {
-    /* clear is a class selector - applies to specific classes*/
-    clear: both;
-    /* here both is used to clear both left and right floated elements */
-    margin: 1em;
-    padding: 0.5em;
-    border: 2px solid rgb(74, 74, 219);
-    }
+  /* clear is a class selector - applies to specific classes*/
+  clear: both;
+  /* here both is used to clear both left and right floated elements */
+  margin: 1em;
+  padding: 0.5em;
+  border: 2px solid rgb(74, 74, 219);
+}
 .clearfix::after {
   /* clearfix is a class selector - applies to specific classes*/
   content: "";
   display: table;
-  clear: both;/* here both is used to clear both left and right floated elements */
+  clear: both; /* here both is used to clear both left and right floated elements */
 }
 .container {
   /* container is a class selector - applies to specific classes*/
   border: 2px solid rgb(74, 74, 219);
   padding: 1em; /* em depends on the font size of the element, so if the font size of the element changes, the padding will change accordingly . Since no font size is specified for the container, it will inherit from its parent -default font size is 16px */
-  margin: 1em;/*margin collapse is a phenomenon where the margin of an element collapses with the margin of its parent or sibling elements, resulting in a smaller margin than expected. This can happen when the margins of adjacent elements overlap, and the larger margin takes precedence. To avoid margin collapse, we can use padding instead of margin, or we can use a clearfix to clear the float and create a new block formatting context. */
+  margin: 1em; /*margin collapse is a phenomenon where the margin of an element collapses with the margin of its parent or sibling elements, resulting in a smaller margin than expected. This can happen when the margins of adjacent elements overlap, and the larger margin takes precedence. To avoid margin collapse, we can use padding instead of margin, or we can use a clearfix to clear the float and create a new block formatting context. */
   outline: 2px solid rgb(145, 240, 233); /* outline is a line drawn outside the element's border, it is used to highlight the element, it does not take up space, so it does not affect the layout of the page */
 }
 
@@ -238,12 +239,12 @@ p::first-letter {
   /* here column-gap is used to specify the gap between columns */
   column-rule: 2px solid rgb(74, 74, 219);
   /* here column-rule is used to specify the rule between columns */
-  
+
   p {
     /* p is a element selector - applies to all p elements inside the column-section */
     text-align: justify;
     /* here text-align is used to justify the text in the columns */
-    width:auto
+    width: auto;
   }
 
   break-inside: avoid;
@@ -268,7 +269,6 @@ p::first-letter {
   /* here white-space is used to prevent the text from wrapping */
   border: none;
   background-color: transparent;
-
 }
 
 .outer-container {
@@ -281,56 +281,147 @@ p::first-letter {
   /* here align-items is used to align the items vertically */
   padding: 1em;
   border: 2px solid rgb(74, 74, 219);
-/*   min-width: 85vw;
+  /*   min-width: 85vw;
   min-height: 30vh; */
-   position:relative; 
+  position: relative;
 }
 
 .inner-container {
   /* inner-container is a class selector - applies to specific classes*/
- 
+
   padding: 1em;
   border: 2px solid rgb(74, 74, 219);
   width: 70vw;
   height: 70vh;
- 
 }
 
-.box{
-  
-    width: 200px;
-    height: auto;
-    border: 2px solid rgb(74, 74, 219);
-} 
+.box {
+  width: 200px;
+  height: auto;
+  border: 2px solid rgb(74, 74, 219);
+}
 
-.absolute{
+.absolute {
   background-color: bisque;
-  position: absolute;/* Absolute moves not based on the immediate parent but instead which container is said as relative explicitly, if none of the container is set as relative it will take body as its reference container*/
+  position: absolute; /* Absolute moves not based on the immediate parent but instead which container is said as relative explicitly, if none of the container is set as relative it will take body as its reference container*/
   top: 0px;
-  left:0px;
-  z-index: 1;/* Here z-index mentions how many layers should be come in front*/
-
+  left: 0px;
+  z-index: 1; /* Here z-index mentions how many layers should be come in front*/
 }
 
-.relative{
+.relative {
   background-color: beige;
-  position: relative;/* Relative moves based on the immediate parents reference no need to mention relative in its parent*/
+  position: relative; /* Relative moves based on the immediate parents reference no need to mention relative in its parent*/
   top: 100px;
   left: 100px;
 }
 
-.fixed{
+.fixed {
   background-color: chocolate;
-  position: fixed;/* When position is fixed it always fixed to the page even when we scroll it will be unmovable from the mentioned pixels */
+  position: fixed; /* When position is fixed it always fixed to the page even when we scroll it will be unmovable from the mentioned pixels */
   top: 200px;
-  left:50px;
+  left: 50px;
 }
 
-.sticky{
+.sticky {
   background-color: burlywood;
   position: sticky; /*Sticky will be seen in the screen like fixed but the differnce is when its container(parent) moves away from screen it also disappears*/
-  top:0px;
-  left:100px;
+  top: 0px;
+  left: 100px;
+}
+
+.flContainer {
+  max-width: 800px;
+  min-height: 400px;
+  margin-inline: auto;
+  border: 2px solid rosybrown;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-end; /* flex-start is the default*/
+  flex-direction: row; /* flex direction is row by default*/
+  flex-wrap: wrap; /*wraps the boxes to next row without overflow*/
+  align-content: center;
+}
+
+.flbox {
+  /*min-width: 100px;*/ /*->flex-basis:100px property is similar to min-width property*/
+  height: 100px;
+  background-color: rgb(143, 125, 117);
+  font-size: 2rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100px;
+  flex-grow: 1; /* This property makes the items to grow until there is space in the container to fill it*/
+}
+
+/*To individually control the items we use below pseudo class*/
+.flbox:nth-child(4) {
+  flex-shrink: 2;
+  order: -1; /* -1 makes the 4th elt to appear as first element in the row, 1 makes the 4th elt to appear as last elt*/
+}
+
+.gridContainer {
+  display: grid;
+  /*  grid-auto-flow: column; */
+  grid-template-columns: 2fr 1fr 1fr; /*Here 3 columns will be added where first col will be 2 times fraction than the 2 and 3 column*/
+  grid-template-columns: repeat(4,1fr 2fr); 
+  /*Here 4 columns will be added with first elt 1 fraction and 2nd elt 2 fraction like a repeating pattern*/
+  grid-auto-rows: 100px;
+  grid-auto-rows: minmax(100px, auto);
+  gap: 1em;
+}
+
+.gridbox {
+  background-color: darkgoldenrod;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.gridbox:first-child{
+  background-color: rgb(180, 180, 69);
+  grid-column-start: 1; /*This makes the first child of the grid to start at col 1 and extend till col 4 */
+  grid-column-end: 4; /* shortcut -> grid-column: 1 / 4 ; */
+  grid-row-start: 1;/*This makes the first child of the grid to start at row 1 and extend till row 3 */
+  grid-row-end:3 ;/* shortcut -> grid-row: 1 / 3 ; */ 
+  display: grid;
+  align-content: end;
+  justify-content: end;
+}
+
+.gridbox:nth-child(4){
+  background-color: blueviolet;
+  display: grid;/*we have to specify display:grid then only the alignment works in whole grid*/
+  place-content: end center;/* This property combines both align-content and justify-content*/
+}
+
+.gridtemcontainer{
+   display: grid;
+   grid-template-columns: repeat(6,1fr);
+   grid-auto-rows: 50px auto 50px;
+   grid-template-areas: "hd hd hd hd hd hd" "mn mn mn mn sd sd" "ft ft ft ft ft ft";
+  grid-area: mn;
+}
+
+.el{
+  display: grid;
+  background-color: darkgrey;
+  color: darkblue;
+  place-content: center;
+}
+
+.header{
+  grid-area: hd;
+}
+
+.sidebar{
+  grid-area: sd;
+}
+
+.footer{
+  grid-area: ft;
 }
 
 #second {
