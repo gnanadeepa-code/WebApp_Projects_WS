@@ -175,6 +175,10 @@ p::first-letter {
   /*content: "CSS -->"; here we can use text instead of bullets or numbers*/
 }
 
+img{
+  display: block; /*Changing the display from in-block to block removes the gap between the img and its container*/
+}
+
 /* coolors.co website https://coolors.co/ gives more details on how to mix and match colors  */
 
 .gray {
@@ -367,7 +371,7 @@ p::first-letter {
   display: grid;
   /*  grid-auto-flow: column; */
   grid-template-columns: 2fr 1fr 1fr; /*Here 3 columns will be added where first col will be 2 times fraction than the 2 and 3 column*/
-  grid-template-columns: repeat(4,1fr 2fr); 
+  grid-template-columns: repeat(4, 1fr 2fr);
   /*Here 4 columns will be added with first elt 1 fraction and 2nd elt 2 fraction like a repeating pattern*/
   grid-auto-rows: 100px;
   grid-auto-rows: minmax(100px, auto);
@@ -380,49 +384,83 @@ p::first-letter {
   padding: 0.5rem;
 }
 
-.gridbox:first-child{
+.gridbox:first-child {
   background-color: rgb(180, 180, 69);
   grid-column-start: 1; /*This makes the first child of the grid to start at col 1 and extend till col 4 */
   grid-column-end: 4; /* shortcut -> grid-column: 1 / 4 ; */
-  grid-row-start: 1;/*This makes the first child of the grid to start at row 1 and extend till row 3 */
-  grid-row-end:3 ;/* shortcut -> grid-row: 1 / 3 ; */ 
+  grid-row-start: 1; /*This makes the first child of the grid to start at row 1 and extend till row 3 */
+  grid-row-end: 3; /* shortcut -> grid-row: 1 / 3 ; */
   display: grid;
   align-content: end;
   justify-content: end;
 }
 
-.gridbox:nth-child(4){
+.gridbox:nth-child(4) {
   background-color: blueviolet;
-  display: grid;/*we have to specify display:grid then only the alignment works in whole grid*/
-  place-content: end center;/* This property combines both align-content and justify-content*/
+  display: grid; /*we have to specify display:grid then only the alignment works in whole grid*/
+  place-content: end center; /* This property combines both align-content and justify-content*/
 }
 
-.gridtemcontainer{
-   display: grid;
-   grid-template-columns: repeat(6,1fr);
-   grid-auto-rows: 50px auto 50px;
-   grid-template-areas: "hd hd hd hd hd hd" "mn mn mn mn sd sd" "ft ft ft ft ft ft";
+.gridtemcontainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 50px auto 50px;
+  grid-template-areas: "hd hd hd hd hd hd" "mn mn mn mn sd sd" "ft ft ft ft ft ft";
   grid-area: mn;
 }
 
-.el{
+.el {
   display: grid;
   background-color: darkgrey;
   color: darkblue;
   place-content: center;
 }
 
-.header{
+.header {
   grid-area: hd;
 }
 
-.sidebar{
+.sidebar {
   grid-area: sd;
 }
 
-.footer{
+.footer {
   grid-area: ft;
 }
+
+.imageEx {
+  border: 1px solid blue;
+  display: flexbox;
+  background-color: rgb(180, 155, 117);
+  /* background-image: url('../images/quotes1.jpg'); */
+  background-image:linear-gradient(to bottom, steelblue,white);
+  background-size: contain;
+  background-position: bottom;
+ /*  -webkit-background-clip: text;
+  color:transparent; */ 
+
+}
+
+.imageEx img{
+  width:25%;
+  height: auto;
+}
+
+.sampleImg{
+  display: flexbox;
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.nowrap{
+  color: black;
+  text-shadow: 2px 2px 5px hsla(223, 87%, 44%, 0.356);
+  display: block;
+  white-space: nowrap;
+}
+
 
 #second {
   /* second is a id selector - applies to very specific to particular id only it will not be repeated*/
