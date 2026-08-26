@@ -175,7 +175,7 @@ p::first-letter {
   /*content: "CSS -->"; here we can use text instead of bullets or numbers*/
 }
 
-img{
+img {
   display: block; /*Changing the display from in-block to block removes the gap between the img and its container*/
 }
 
@@ -433,61 +433,108 @@ img{
   display: flexbox;
   background-color: rgb(180, 155, 117);
   /* background-image: url('../images/quotes1.jpg'); */
-  background-image:linear-gradient(to bottom, steelblue,white);
+  background-image: linear-gradient(to bottom, steelblue, white);
   background-size: contain;
   background-position: bottom;
- /*  -webkit-background-clip: text;
-  color:transparent; */ 
-
+  /*  -webkit-background-clip: text;
+  color:transparent; */
 }
 
-.imageEx img{
-  width:25%;
+.imageEx img {
+  width: 25%;
   height: auto;
 }
 
-.sampleImg{
+.sampleImg {
   display: flexbox;
   flex-direction: column;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   align-items: flex-end;
   padding: 20px;
 }
 
-.nowrap{
+.nowrap {
   color: black;
   text-shadow: 2px 2px 5px hsla(223, 87%, 44%, 0.356);
   display: block;
   white-space: nowrap;
 }
 
-.mqSec{
+.mqSec {
   min-height: 30vh;
   background-color: cornflowerblue;
   background-image: radial-gradient(rgb(227, 230, 218), rgb(125, 120, 121));
   display: flex;
   flex-direction: column;
-  place-content: center;
-  align-items: center;
- 
-  header{
-     position: sticky;
-    top:0;
+
+  header {
+    background-color: rgb(183, 147, 94);
+    position: sticky;
+    top: 0;
+    display: grid;
+    place-content: center;
+  }
+
+  nav {
+    background-color: rgb(237, 212, 135);
+    display: grid;
+    place-content: center;
+  }
+
+  article {
+    display: flex;
+    flex-grow: 1;
+    place-content: center;
+    align-items: center;
+  }
+
+  footer {
+    background-color: burlywood;
+    display: grid;
+    place-content: center;
   }
 }
 
-/*CSS media queries are used to create responsive web designs that adapt to different screen sizes and devices*/
-@media screen and (min-width:576px) {
+/*small screen sizes*/
+@media screen and (min-width: 576px) {
   /*When browser width increases above 576px below styles will be applied*/
-  .mqSec{
+  .mqSec {
     background-color: rgb(215, 89, 96);
+    background-image: radial-gradient(whitesmoke, green);
+  }
+
+  .mqSec nav {
+      display: none;
+    }
+}
+
+/*Medium screen sizes*/
+@media screen and (min-width: 768px) {
+  /*When browser width increases above 576px below styles will be applied*/
+  .mqSec {
+    background-color: rgb(215, 89, 96);
+    background-image: radial-gradient(whitesmoke, rgb(96, 125, 231));
   }
 
 }
-@media screen and (orientation: landscape) {
-  /*min-aspect-ratio: 16/9
-  use bootstrap breakpoint site to check the values of different screen sizes*/
+/*Large screen sizes*/
+@media screen and (min-width: 992px) {
+  /*use bootstrap breakpoint site to check the values of different screen sizes*/
+  .mqSec {
+    background-color: rgb(215, 89, 96);
+    background-image: radial-gradient(whitesmoke, rgb(231, 197, 96));
+  }
 
+}
+/*mobile screen landscape*/
+@media screen and (max-height:425px) and (min-aspect-ratio:7/4) {
+ /* min-aspect-ratio is better way to control the orientation of the screen*/
+  .mqSec {
+    background-color: rgb(177, 108, 111);
+    background-image: radial-gradient(whitesmoke, rgb(243, 136, 86));
+  }
+
+  
 }
 #second {
   /* second is a id selector - applies to very specific to particular id only it will not be repeated*/
