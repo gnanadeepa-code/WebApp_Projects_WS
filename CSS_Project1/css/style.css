@@ -40,8 +40,31 @@ https://www.youtube.com/watch?v=GlEY28YLffs -> Balachandra youtube channel for c
     box-sizing: border-box; /* here border-box is used to include padding and border in the width and height of the element, this is a best practice to avoid any unexpected behavior in the layout of the page. But this can be overridden by other selectors with higher specificity.
 } 
 */
+
+/* Variables*/
+:root{ /* :root is a pseudo class under which variables are declared , so it can be inherited by any classes */
+  --BGCOLOR: #8484df; /* here --BGCOLOR is a constant variable. where -- is mandatory to declare a var*/
+  --ALT-BGCOLOR:  #72b4c5;
+  --FF: "Courier New", Courier, monospace;
+}
+
+/*Dark Mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --BGCOLOR: #3f3f86;
+    --ALT-BGCOLOR:  #13424e;
+  }
+}
+/*Light Mode */
+@media (prefers-color-scheme: light){
+  :root{
+    --BGCOLOR: #a3a3f0;
+    --ALT-BGCOLOR:  #90b7c1;
+  }
+}
+
 html {
-  background-color: rgb(186, 171, 192);
+  background-color: var(--BGCOLOR);
   width: 100%;
   /* Here 100% is relative unit of measurement this shd be used mostly as best practice */
   box-sizing: content-box; /* content-box is default value of box-sizing property, but it can be changed to border-box which includes padding and border in the width and height of the element */
@@ -85,7 +108,7 @@ p span {
   /* span is a element selector - applies only when span is inside a p element but generally this is not good practice */
   display: inline-block;
   color: rgb(74, 74, 219);
-  background-color: rgb(183, 184, 235);
+  background-color: var(--ALT-BGCOLOR);
   font-size: 20px;
   /*px is absolute unit of measurement this is not best practice instead use relative units like percentage,rem, em for text and px can be used for border lines */
   padding: 0.5em;
@@ -100,7 +123,7 @@ h3 {
   color: rgba(74, 74, 219, 0.8);
   /* here rgba (alpha) is used to give transparency to the color */
   text-decoration: underline;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--FF);
   /* we can add font family externally by importing from google fonts or adobe fonts by link or import , but here we are using system fonts */
 }
 
@@ -532,10 +555,9 @@ img {
   .mqSec {
     background-color: rgb(177, 108, 111);
     background-image: radial-gradient(whitesmoke, rgb(243, 136, 86));
-  }
-
-  
+  }  
 }
+
 #second {
   /* second is a id selector - applies to very specific to particular id only it will not be repeated*/
   font-style: italic;
