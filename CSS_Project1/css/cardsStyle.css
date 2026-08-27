@@ -34,7 +34,8 @@ body{
     flex-direction: column;
 }
 
-header,footer{
+/*Pseudo classes are used for a particular element in particular state, we can apply styles*/
+:is(header,footer){ /*Here :where pseudo class can also be use used but its specificity is less than :is*/
     position: sticky;
     background-color: rgb(84, 89, 186);
     color: beige;
@@ -54,11 +55,11 @@ nav{
     justify-content: space-evenly;
 }
 
-nav a,nav a:visited{
+nav a:any-link{
     color: rgb(68, 38, 92);
 }
 
-nav a:hover, nav a:focus{
+nav :is(a:hover,a:focus){ /*:is is a pseudo class*/
     color: blueviolet;
 }
 
@@ -93,6 +94,7 @@ footer{
     flex-flow: column nowrap;
 }
 
+
 .card figcaption{
     font-weight: bolder;
     font-size: 1rem;
@@ -100,9 +102,18 @@ footer{
     text-align: center;
 }
 
+.card:target{ /* :target is a pseudo class*/
+    border: 5px solid green;
+}
+
 .card img{
     border: 5px double rgb(141, 46, 133);
     border-radius: 50%;
+}
+
+.card img:not([alt]){ /* img elt which is not having alt attr alone will have this changes. :not is a pseudo class */
+    border: 5px solid red;
+
 }
 
 /*Media Query for responsive design for small screen*/
@@ -117,7 +128,7 @@ footer{
         width: min(100%,400px);
     }
 
-    .card:last-child{
+    .card:last-child{ /* :last-child is a pseudo class */
         order: -1;
     }
 }
