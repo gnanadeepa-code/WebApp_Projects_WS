@@ -94,12 +94,16 @@ footer{
     flex-flow: column nowrap;
 }
 
-
 .card figcaption{
     font-weight: bolder;
     font-size: 1rem;
     margin: 1rem;
     text-align: center;
+}
+
+/*pseudo element acts as a false html elt */
+.card figcaption::after{ /* after the figcaption we added 'hello' using pseudo elt instead of directly giving in html*/
+    content: ' Hello \2728'; /*Pseudo elts will not get selected in the html page if we select the contents */
 }
 
 .card:target{ /* :target is a pseudo class*/
