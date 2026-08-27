@@ -1,0 +1,161 @@
+/*Go to google font website, select your font, copy its url and paste here */
+@import url(https://fonts.googleapis.com/css2?family=Scoutie+Sans:ital,wght@0,200..800;1,200..800&display=swap);
+
+/* Reset Starts*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* Reset Ends*/
+
+/*Utility classes*/
+.nowrap{
+    white-space: nowrap;
+}
+
+/* General Styles*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font: 1.2rem "Scoutie+Sans", sans-serif;
+    min-height: 100vh;
+    background-color: azure;
+    background-image: radial-gradient(whitesmoke,rgb(147, 147, 232));
+    display: flex;
+    flex-direction: column;
+}
+
+header,footer{
+    position: sticky;
+    background-color: rgb(84, 89, 186);
+    color: beige;
+    text-align: center;
+}
+
+header{
+    top: 0;
+}
+
+nav{
+    background-color:  rgb(125, 129, 191);
+    padding: 0.5rem;
+    border-bottom: 2px solid black;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav a,nav a:visited{
+    color: rgb(68, 38, 92);
+}
+
+nav a:hover, nav a:focus{
+    color: blueviolet;
+}
+
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.5rem;
+    padding: 2rem;
+}
+
+footer{
+    bottom: 0;
+}
+
+/* Profile Card styles*/
+.card{
+    scroll-margin-top: 8rem;
+    width: min(100%,350px);
+    background-color: rgb(163, 157, 248);
+    border: 2px solid rgb(118, 92, 92);
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card figure{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card figcaption{
+    font-weight: bolder;
+    font-size: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.card img{
+    border: 5px double rgb(141, 46, 133);
+    border-radius: 50%;
+}
+
+/*Media Query for responsive design for small screen*/
+@media screen and (min-width: 576px) {
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+
+    .card{
+        width: min(100%,400px);
+    }
+
+    .card:last-child{
+        order: -1;
+    }
+}
+
+/*Media Query for responsive design for medium screen*/
+@media screen and (min-width: 768px) {
+    nav{
+        display: none;
+    }
+
+    .card{
+        width: min(100%,325px);
+    }
+
+    .card figure{
+        flex-flow: column-reverse;
+    }
+
+    .card p{
+        margin-top: 1rem;
+    }
+}
+
+/*Media Query for responsive design for large screen*/
+@media screen and (min-width: 992px) {
+   
+    .card{
+        width: min(100%,400px);
+    }
+
+    .card:nth-child(2){
+        order: -1;
+    }
+}
+
+/*Media Query for responsive design for XL screen*/
+@media screen and (min-width: 1200px) {
+    .card{
+        width: min(33%-1rem,500px);
+    }
+}
