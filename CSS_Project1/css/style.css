@@ -30,16 +30,15 @@ https://www.youtube.com/watch?v=GlEY28YLffs -> Balachandra youtube channel for c
 (9:14:06) Chapter 20: Variables -> CSS variables, also known as custom properties, are a way to define reusable values in CSS. They allow designers to create a variable once and use it throughout their stylesheets, making it easier to maintain and update styles. CSS variables are defined using the -- prefix and can be accessed using the var() function. For example, a variable for a primary color can be defined as --primary-color: #3498db; and then used in other styles as color: var(--primary-color);. CSS variables can also be scoped to specific elements or inherited by child elements, providing flexibility in how they are used. Understanding how to use CSS variables effectively is essential for creating well-organized and maintainable web designs.
 (9:48:18) Chapter 21: Functions -> CSS functions are built-in methods that allow designers to perform calculations, manipulate values, and apply transformations to CSS properties. Some common CSS functions include calc(), which allows for mathematical calculations; rgb() and rgba(), which define colors using red, green, blue, and alpha values; hsl() and hsla(), which define colors using hue, saturation, lightness, and alpha values; and url(), which is used to reference external resources such as images or fonts. Other functions include min(), max(), clamp(), and var(), which provide additional flexibility in defining styles. Understanding how to use CSS functions effectively is essential for creating dynamic and responsive web designs.
 (10:21:44) Chapter 22: Animations -> CSS animations are a way to create dynamic and interactive web designs by animating the properties of HTML elements over time. They allow designers to define keyframes, which specify the starting and ending states of an animation, as well as intermediate states. CSS animations can be applied to various properties, such as position, size, color, opacity, and transform. The animation property is used to control the duration, timing function, delay, iteration count, and direction of the animation. Additionally, CSS transitions can be used to create smooth changes between different states of an element when a user interacts with it. Understanding how to use CSS animations effectively is essential for creating engaging and visually appealing web pages.
-(11:24:10) Chapter 23: Organization -> CSS organization is the practice of structuring and managing CSS code in a way that is maintainable, scalable, and easy to understand. This can be achieved through various techniques, such as using a consistent naming convention for classes and IDs, grouping related styles together, and separating styles into different files based on their purpose or component. Additionally, using CSS preprocessors like Sass or Less can help organize code by allowing for variables, mixins, and nesting. Commenting code and following best practices for writing clean and efficient CSS are also important aspects of organization. Understanding how to organize CSS effectively is essential for creating well-structured and maintainable web designs. 
+(11:24:10) Chapter 23: Organization -> CSS organization is the practice of structuring and managing CSS code in a way that is maintainable, scalable, and easy to understand. BEM- Block Element Modifier- Naming Convention. click ctrl+p then type, >sort lines ascending, now the lines will rearrange in ascending order. Block elts written as header__nav, whereas block modifiers as btn--border.This can be achieved through various techniques, such as using a consistent naming convention for classes and IDs, grouping related styles together, and separating styles into different files based on their purpose or component. Additionally, using CSS preprocessors like Sass or Less can help organize code by allowing for variables, mixins, and nesting. Commenting code and following best practices for writing clean and efficient CSS are also important aspects of organization. Understanding how to organize CSS effectively is essential for creating well-structured and maintainable web designs. 
 (11:44:04) Chapter 24: Final Project*/
 
-/*   * -> is a universal selector - applies generally to all elements.This is used to reset css, by default all elements have some margin and padding by browsers, so we can reset it to 0px to avoid any unwanted spacing. This is a best practice to avoid any unexpected behavior in the layout of the page. But this can be overridden by other selectors with higher specificity. 
+/*   * -> is a universal selector - applies generally to all elements.This is used to reset css, by default all elements have some margin and padding by browsers, so we can reset it to 0px to avoid any unwanted spacing. This is a best practice to avoid any unexpected behavior in the layout of the page. But this can be overridden by other selectors with higher specificity. */
 *{ 
     margin:  0px;
     padding: 0px;
-    box-sizing: border-box; /* here border-box is used to include padding and border in the width and height of the element, this is a best practice to avoid any unexpected behavior in the layout of the page. But this can be overridden by other selectors with higher specificity.
+    box-sizing: border-box; /* here border-box is used to include padding and border in the width and height of the element, this is a best practice to avoid any unexpected behavior in the layout of the page. But this can be overridden by other selectors with higher specificity.*/
 } 
-*/
 
 /* Variables*/
 :root{ /* :root is a pseudo class under which variables are declared , so it can be inherited by any classes */
@@ -146,8 +145,8 @@ a:active {
 a:hover {
   /* a:hover is a pseudo-class selector - applies to links when hovered */
   color: rgba(74, 74, 219, 0.5);
-  text-decoration: underline;
   filter: brightness(150%);
+  text-decoration: underline;
 }
 
 ol {
