@@ -147,6 +147,7 @@ a:hover {
   /* a:hover is a pseudo-class selector - applies to links when hovered */
   color: rgba(74, 74, 219, 0.5);
   text-decoration: underline;
+  filter: brightness(150%);
 }
 
 ol {
@@ -258,6 +259,10 @@ img {
   outline-offset: 5px; /* here outline-offset is used to offset the outline from the element's border */
 }
 
+.circle:hover::after{
+  content: attr(data-tooltip);/*data-tooltip is custom attribute which we defined in html page*/
+}
+
 .column-section {
   /* column-section is a class selector - applies to specific classes*/
   column-count: 3;
@@ -329,6 +334,7 @@ img {
 }
 
 .absolute {
+  font-size: min(2.35rem,3vh); /*min() is a function which chooses min value from given 2 parameters */
   background-color: bisque;
   position: absolute; /* Absolute moves not based on the immediate parent but instead which container is said as relative explicitly, if none of the container is set as relative it will take body as its reference container*/
   top: 0px;
@@ -375,7 +381,7 @@ img {
   /*min-width: 100px;*/ /*->flex-basis:100px property is similar to min-width property*/
   height: 100px;
   background-color: rgb(143, 125, 117);
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 2vh, 1.5rem);/*clamp() is a function which combines both min() and max() function. Clamp() makes the font size smaller when screen size decreases and bigger when screen size increases */
   padding: 0.5rem;
   display: flex;
   justify-content: center;
@@ -524,6 +530,7 @@ img {
   .mqSec {
     background-color: rgb(215, 89, 96);
     background-image: radial-gradient(whitesmoke, green);
+    width: calc(80%-5px); /*calc() function */
   }
 
   .mqSec nav {
