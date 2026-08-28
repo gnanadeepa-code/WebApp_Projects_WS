@@ -372,28 +372,134 @@ img {
   gap: 1rem;
   justify-content: space-between;
   align-items: flex-end; /* flex-start is the default*/
-  flex-direction: row; /* flex direction is row by default*/
+  flex-direction: column; /* flex direction is row by default*/
   flex-wrap: wrap; /*wraps the boxes to next row without overflow*/
   align-content: center;
 }
 
 .flbox {
   /*min-width: 100px;*/ /*->flex-basis:100px property is similar to min-width property*/
-  height: 100px;
+  height: 200px;
+  width: 200px;
   background-color: rgb(143, 125, 117);
   font-size: clamp(1.25rem, 2vh, 1.5rem);/*clamp() is a function which combines both min() and max() function. Clamp() makes the font size smaller when screen size decreases and bigger when screen size increases */
   padding: 0.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-basis: 100px;
+  flex-basis: auto;
   flex-grow: 1; /* This property makes the items to grow until there is space in the container to fill it*/
+  
 }
 
 /*To individually control the items we use below pseudo class*/
 .flbox:nth-child(4) {
   flex-shrink: 2;
   order: -1; /* -1 makes the 4th elt to appear as first element in the row, 1 makes the 4th elt to appear as last elt*/
+  transform: translateX(30%);/*translatex used for x-axis animation */
+}
+
+.flbox:nth-child(1){
+  background-color: #6c4b4b;
+  transform: translateY(-1rem);/*translatey used for y-axis animation */
+}
+.flbox:nth-child(2){
+  background-color: #a78989;
+  transform: translate(100%,-1rem);/*translate used for both x,y-axis animation */
+}
+.flbox:nth-child(3){
+  background-color: #a78989;
+  transform: rotate(70deg);/*rotate can be used for both x,y,z axis rotation animations */
+}
+.flbox:nth-child(5){
+  background-color: #a78989;
+  transform: scale(50%,40%);/*scale can be used for both x,y axis scaling of the animations */
+}
+.flbox:last-child{
+  background-color: #a78989;
+  transform: skew(-10deg,-15deg);/*skew can be used for both x,y axis of the animations */
+}
+
+.flbox:hover{
+  background-color: #a7d965;
+  transition-property: background-color;/*transition property for animation*/
+  transition-duration: 2s;
+  transition-delay: 0.1s;
+   transition-timing-function: linear;
+  /*below is shorthand for above line*/
+  transition: all 5s linear 0.5s; /*here all is used for all the properties used not alone background color*/
+}
+
+.flbox:last-child:hover{
+  transform: rotate(180deg);
+}
+
+/*Below are the animation code to perform when first entering to a site*/
+.flbox:nth-child(1){
+  animation-name: slide;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 2;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  /*below code is simplified code for above line of codes */
+  animation: slide 5s ease-in-out 1s 2 normal forwards;
+}
+
+@keyframes slide{/*Slide is the animation name*/
+  /*Below are the operations which needs to be performed in the animation */
+  0%{
+    transform: translateX(0);
+  }
+
+  33%{
+    transform: translateX(300px) rotate(180deg);
+  }
+
+  66%{
+     transform: translateX(-300px) rotate(-180deg) scaleX(200%);
+  }
+  100%{
+    transform: translateX(0);
+    background-color: rebeccapurple;
+  }
+}
+
+.header-title-line{
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+}
+
+.menu-button{
+  background-color: transparent; 
+  border: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after{
+  background-color: aliceblue;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.menu-icon::before,
+.menu-icon::after{
+  content: ""; /*If content is mentioned only before and after pseudo elts will be displayed else no */
+  
 }
 
 .gridContainer {
@@ -401,6 +507,8 @@ img {
   /*  grid-auto-flow: column; */
   grid-template-columns: 2fr 1fr 1fr; /*Here 3 columns will be added where first col will be 2 times fraction than the 2 and 3 column*/
   grid-template-columns: repeat(4, 1fr 2fr);
+  /*grid-template-columns: repeat(4,minmax(100px,300px));*/
+
   /*Here 4 columns will be added with first elt 1 fraction and 2nd elt 2 fraction like a repeating pattern*/
   grid-auto-rows: 100px;
   grid-auto-rows: minmax(100px, auto);
@@ -421,7 +529,7 @@ img {
   grid-row-end: 3; /* shortcut -> grid-row: 1 / 3 ; */
   display: grid;
   align-content: end;
-  justify-content: end;
+  justify-content: end;  
 }
 
 .gridbox:nth-child(4) {
