@@ -78,3 +78,20 @@ let testscore = 90;
 let grade = testscore>89 ? "A" : testscore > 79 ? "B" : testscore>69 ? "C" : "D";
 console.log(grade);
 
+//Rock-Paper-Scissor
+let player="paper";
+let computer="rock";
+let result = player === computer ? "Tie" : player === "rock" && computer === "paper" ? "Computer Wins!" : player === "paper" && computer === "scissor" ? "Computer Wins!" : player === "scissor" && computer === "rock" ? "Computer Wins!" : "Player Wins!" ;
+console.log(result);
+
+//User Input
+alert("Hi, Welcome to my website.");
+
+let myBoolean = confirm("Good Day");
+console.log(myBoolean);
+
+let cusVar= prompt("What is your job?");
+//Nullish coalescing is a JavaScript operator that uses ?? to choose a default value only when the left side is null or undefined.
+console.log(cusVar ?? ""); 
+
+
