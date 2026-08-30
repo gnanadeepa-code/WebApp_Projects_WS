@@ -148,6 +148,7 @@ if (player1) {
       playAgain ? location.reload() : alert("Thanks for playing.");
     } else {
       alert("Please enter rock, paper or scissor.");
+      location.reload();
     }
   } else {
     alert("I guess you changed your mind. Maybe next time.");
@@ -155,3 +156,24 @@ if (player1) {
 } else {
   alert("Ok, we can play next time. Bye");
 }
+
+//Loops - While loop
+let i=1;
+while(i<=10){
+    console.log(i);
+    i++;
+}
+
+//Do-While loop =>Runs atleast one time no matter the condition
+let j=50;
+do{
+    console.log(j);
+    j++;
+}while(j<50)
+
+//For loop
+let name1="Deepa";
+for(let i=0;i<=name1.length;i++){
+    console.log(name1.charAt(i));
+}
+
