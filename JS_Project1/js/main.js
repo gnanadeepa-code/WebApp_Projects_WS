@@ -161,6 +161,9 @@ if (player1) {
 let i=1;
 while(i<=10){
     console.log(i);
+    if(i===5){
+        break; //breaks the loop
+    }
     i++;
 }
 
@@ -175,5 +178,38 @@ do{
 let name1="Deepa";
 for(let i=0;i<=name1.length;i++){
     console.log(name1.charAt(i));
+    for(let j=0;j<=name1.length;j++){
+        if(j===3){
+            continue; //skips the current iteration when j==3
+        }
+        console.log(i,j);
+    }
 }
 
+//Functions - called when needed
+let emailId="dfgkdddddddfgdg@gmail.com";
+//1.Function Declaration- commonly used, Can be called before it is defined
+function getUserNameFromEmail(email){
+    return (email.slice(0,email.indexOf("@"))); //slice is inbuilt function
+}
+ 
+console.log(getUserNameFromEmail(emailId));
+
+//2.Function Expression
+const toProperCase = function (name){
+    return name.charAt(0).toUpperCase()+ name.slice(1).toLowerCase();
+}
+console.log(toProperCase(emailId));
+
+//3.Arrow function - shorter version
+const toProperCase1 = (name) =>  name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+
+function add(a, b) {
+  return a + b;
+}
+
+const multiply = function (a, b) {
+  return a * b;
+};
+
+const divide = (a, b) => a / b;
