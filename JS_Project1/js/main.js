@@ -213,3 +213,10 @@ const multiply = function (a, b) {
 };
 
 const divide = (a, b) => a / b;
+
+//Scope - lifetime of the variable, where can be used.
+//var -> Scope is Global. Reassignable. Redeclarable. (less usable)
+//let -> Scope is block level. Reassignable. Not Redeclarable in same scope.
+//const -> Scope is block level.Not Reassignable. Not Redeclarable.
+
+//Array
