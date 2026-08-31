@@ -418,4 +418,31 @@ class BankAccount {
 const account = new BankAccount("Deepa", 5000, 1234);
 console.log(account.accountHolder);  // "Deepa" (public - works)
 console.log(account.getBalance());   // 5000 (through method - works)
+console.log(account.withdraw(1000,1234));   // 5000 (through method - works)
 //console.log(account.#balance);       // Error! Private field
+
+//JSON - JavaScript Object Notation. This is text format to send and receive data to server side in many programming languages since it is language independent
+// 1. Create a JavaScript object
+const course = {
+  id: 101,
+  title: "JavaScript Basics",
+  instructor: "Deepa",
+  price: 99.99,
+  students: ["Alice", "Bob", "Charlie"],
+  isActive: true
+};
+
+// 2. Convert to JSON (for sending to server)
+const jsonData = JSON.stringify(course);
+console.log(jsonData);
+
+// 3. Send to API or save to file
+// fetch('/api/courses', { method: 'POST', body: jsonData });
+
+// 4. Receive JSON from server
+const receivedJSON = '{"id":101,"title":"JavaScript Basics","instructor":"Deepa","price":99.99,"students":["Alice","Bob","Charlie"],"isActive":true}';
+
+// 5. Convert back to object
+const courseData = JSON.parse(receivedJSON);
+console.log(courseData.title);      // JavaScript Basics
+console.log(courseData.students[0]); // Alice
