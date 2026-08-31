@@ -422,6 +422,8 @@ console.log(account.withdraw(1000,1234));   // 5000 (through method - works)
 //console.log(account.#balance);       // Error! Private field
 
 //JSON - JavaScript Object Notation. This is text format to send and receive data to server side in many programming languages since it is language independent
+//JSON is essential for working with APIs, saving data, and sending information between servers and browsers.
+
 // 1. Create a JavaScript object
 const course = {
   id: 101,
@@ -446,3 +448,44 @@ const receivedJSON = '{"id":101,"title":"JavaScript Basics","instructor":"Deepa"
 const courseData = JSON.parse(receivedJSON);
 console.log(courseData.title);      // JavaScript Basics
 console.log(courseData.students[0]); // Alice
+
+//Errors and Error Handling
+//Errors in JavaScript happen when something goes wrong in code. Error handling catch and manage these errors gracefully.
+//1. Syntax Error - Mistake in code structure — caught before running:
+//2. Reference Error - Using a variable that doesn't exist:
+//3. Type Error - Wrong data type operation:
+//4. Range Error - Invalid range:
+
+"use strict"; //strict is used to follow the rules strictly in js, so easy to catch type errors.
+
+try {
+  // Code that might cause an error
+  let result = 10 / 0;  // No error - valid
+  console.log(result);  // Infinity
+  
+} catch (error) {
+  // Runs if error occurs
+  console.log("An error occurred:", error.message);
+  
+} finally {
+  // Always runs (cleanup code)
+  console.log("This runs no matter what");
+}//Without try-catch, the program crashes here.
+
+//Use throw to create your own custom errors:
+function validateAge(age) {
+  if (age < 0) {
+    throw new Error("Age cannot be negative");
+  }
+  if (age < 18) {
+    throw new Error("Must be 18 or older");
+  }
+  return "Age is valid";
+}
+
+try {
+  console.log(validateAge(-5));
+} catch (error) {
+  console.log("Error:", error.message);  // Error: Age cannot be negative
+}
+
