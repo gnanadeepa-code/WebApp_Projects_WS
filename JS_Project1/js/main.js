@@ -244,3 +244,63 @@ const newArray2 = [...myArray,...newArray];//spread operator does the same job a
 const dim2Array = [myArray,newArray]; //This is 2 dimensional array
 console.log(dim2Array[1][1]); 
 
+//object- key-value pairs in curly braces
+const myObj = {myName:"Deepa"};
+console.log(myObj.myName);
+
+const myObj1= {num:23, completed:false, frontend:{basic:"html",design:"css",action:"js"}, action:function(){
+    return "Hello World!";
+}, action1:function(){
+    return `Learn ${this.frontend.action}`;
+}};
+console.log(myObj1.frontend.basic);
+console.log(myObj1.frontend["action"]);
+console.log(myObj1.action());
+console.log(myObj1.action1());
+
+//Inheritance
+const vehicle = {
+    door:3,
+    engine:function(){
+        return "sdsdgf-engine";
+    }
+};
+console.log(vehicle.engine());
+
+const car =Object.create(vehicle);//Inheriting Vehicle properties
+car.wheels = 4;
+car.engine = function(){ //overriding the engine function
+    return "dfgghh-engine"; 
+}
+console.log(car.door);
+console.log(car.engine());
+
+const tesla = Object.create(car); //Inheriting both car and vehicle
+console.log(tesla.door);
+console.log(tesla.engine());
+
+console.log(Object.keys(car));
+console.log(Object.values(car));
+console.log(tesla.hasOwnProperty("door"));// if tesla has door property, true will be returned
+delete tesla.door; // deletes door property from tesla obj
+
+const movie = {
+    actor: "Vijay",
+    music:"Anirudh",
+    director:"Murugadoss",
+    producer: "Anbu"
+};
+
+//For - In loop
+for(let parts in car){
+    console.log(car[parts]);
+}
+
+//destructuring the objects
+const {actor:myFavActor, director:myFavDir} = movie; //Here actor value from movie is set to myFavActor var
+console.log(myFavActor,myFavDir);
+const {actor,music,director,producer} = movie; // now actor,music,director,producer becomes variables since the names are same as obj and corresponding values will be assigned from movie obj;
+console.log(music);
+
+function hero({actor}){return `The hero of this movie is ${actor}`};//if {} is not added in the parameter the whole obj will be displayed
+console.log(hero(movie));
