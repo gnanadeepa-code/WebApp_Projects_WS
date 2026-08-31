@@ -323,7 +323,7 @@ class Dosa {
         this.type = dosaType;
         this.size = dosaSize;
         this.flavor= dosaFlavor;
-        this.toppings=[];
+        this.toppings=["onion"];
     }
     getToppings(){
         return this.toppings;
@@ -343,3 +343,48 @@ const dosa2 = new Dosa("Normal","medium","ghee");
 dosa2.setToppings("Tomato");
 dosa2.setToppings("Cheese");
 dosa2.cook();
+
+//Class Inheritance
+class SpecialDosa extends Dosa { //Inheriting Dosa characteristics into SpecialDosa
+    constructor(dosaType, dosaSize, dosaFlavor){
+        super(dosaType, dosaSize, dosaFlavor); //super class constructor should be initialized first before child class constructor properties
+        this.dosaShape= "Heart";// child class constructor property
+    }
+    presentation(){
+        console.log(`Your desired dosa shape is ${this.dosaShape} with toppings ${this.toppings}`);
+    }
+}
+
+const splDosa= new SpecialDosa("Special","large","mint");
+splDosa.presentation();
+
+//Factory Function -Is a JavaScript function that creates and returns objects. It is like a blueprint or template for making multiple objects without using classes or the new keyword. Factory Functions can be used instead of classes becoz the data cannot be changed from outside like in classes. Factory Function provides data privacy
+
+function createCar(brand, model, year) {
+  return {
+    brand: brand,
+    model: model,
+    year: year,
+    info: function() {
+      return `${this.year} ${this.brand} ${this.model}`;
+    }
+  };
+}
+
+const car1 = createCar("Toyota", "Camry", 2020);
+const car2 = createCar("Honda", "Civic", 2022);
+
+console.log(car1.info()); // 2020 Toyota Camry
+console.log(car2.info()); // 2022 Honda Civic
+
+//Arrow functions
+const createUser = (name, email) => ({
+  name,
+  email,
+  displayInfo: function() {
+    return `${this.name} - ${this.email}`;
+  }
+});
+
+const user1 = createUser("Deepa", "deepa@gmail.com");
+console.log(user1.displayInfo()); // Deepa - deepa@gmail.com
