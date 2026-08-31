@@ -220,3 +220,27 @@ const divide = (a, b) => a / b;
 //const -> Scope is block level.Not Reassignable. Not Redeclarable.
 
 //Array
+const myArray =[];
+myArray[0]="html";
+myArray[1]="css";
+myArray[2]=123;
+myArray[3]=true;
+myArray[4]=false;
+
+console.log(myArray.length);
+console.log(myArray[myArray.length-1]);
+
+myArray.push("js");//adds elt at the last
+myArray.pop();//deletes the last elt
+myArray.unshift("df");//adds elt at the first
+myArray.shift();//deletes elt from the first
+myArray.splice(2,1,"ghh");//2 -deletes the 2nd item , 1 - tells how many items to delete, "ghh" - ghh replaced in 2nd position
+const newArray = myArray.slice(1,3);//creates a copy of new array with 2 elts from index 1
+newArray.reverse();//reverses the array
+const copyStr = myArray.join();//creates a copy of strings separated by , instead of array
+
+const newArray1 = myArray.concat(newArray);//combines both array as single array
+const newArray2 = [...myArray,...newArray];//spread operator does the same job as concat
+const dim2Array = [myArray,newArray]; //This is 2 dimensional array
+console.log(dim2Array[1][1]); 
+
