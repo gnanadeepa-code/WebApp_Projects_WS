@@ -388,3 +388,34 @@ const createUser = (name, email) => ({
 
 const user1 = createUser("Deepa", "deepa@gmail.com");
 console.log(user1.displayInfo()); // Deepa - deepa@gmail.com
+
+//class using private datas - using factory mtds we cannot access the variables at all, to solve this problem # is introduced to make the properties as private in classes which cannot be accessed from outside
+class BankAccount {
+  #balance;     // private
+  #pin;         // private
+  accountHolder;  // public
+
+  constructor(holder, balance, pin) {
+    this.accountHolder = holder;
+    this.#balance = balance; //The # makes code safer by preventing direct access to sensitive information.
+    this.#pin = pin;
+  }
+
+  // only way to access balance
+  getBalance() {
+    return this.#balance;
+  }
+
+  withdraw(amount, pin) {
+    if (pin === this.#pin) {
+      this.#balance -= amount;
+      return `Withdrawn: ${amount}`;
+    }
+    return "Wrong PIN!";
+  }
+}
+
+const account = new BankAccount("Deepa", 5000, 1234);
+console.log(account.accountHolder);  // "Deepa" (public - works)
+console.log(account.getBalance());   // 5000 (through method - works)
+//console.log(account.#balance);       // Error! Private field
