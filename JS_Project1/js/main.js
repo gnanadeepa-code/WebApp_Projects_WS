@@ -302,5 +302,44 @@ console.log(myFavActor,myFavDir);
 const {actor,music,director,producer} = movie; // now actor,music,director,producer becomes variables since the names are same as obj and corresponding values will be assigned from movie obj;
 console.log(music);
 
-function hero({actor}){return `The hero of this movie is ${actor}`};//if {} is not added in the parameter the whole obj will be displayed
+function hero({actor}){
+    return `The hero of this movie is ${actor}`
+};//if {} is not added in the parameter the whole obj will be displayed
 console.log(hero(movie));
+
+//classes
+const myDosa = {
+    size: "medium",
+    flavor: "masala",
+    cook: function(){
+        return console.log(`Cooking a ${this.size} ${this.flavor} variety Dosa.`);
+    }
+};
+myDosa.cook();
+
+//Class acts as a blueprint to create an object
+class Dosa {
+    constructor(dosaType, dosaSize, dosaFlavor){
+        this.type = dosaType;
+        this.size = dosaSize;
+        this.flavor= dosaFlavor;
+        this.toppings=[];
+    }
+    getToppings(){
+        return this.toppings;
+    }
+    setToppings(toppings){
+        this.toppings.push(toppings);
+    }
+    cook(){
+         return console.log(`Cooking a ${this.size} size ${this.flavor} flavour ${this.type} dosa with ${this.toppings} toppings.`);
+    }
+}
+const dosa1 = new Dosa("Special","small","masala");
+dosa1.cook();
+console.log(dosa1.size);
+
+const dosa2 = new Dosa("Normal","medium","ghee");
+dosa2.setToppings("Tomato");
+dosa2.setToppings("Cheese");
+dosa2.cook();
