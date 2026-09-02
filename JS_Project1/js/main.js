@@ -158,51 +158,52 @@ if (player1) {
 }
 
 //Loops - While loop
-let i=1;
-while(i<=10){
-    console.log(i);
-    if(i===5){
-        break; //breaks the loop
-    }
-    i++;
+let i = 1;
+while (i <= 10) {
+  console.log(i);
+  if (i === 5) {
+    break; //breaks the loop
+  }
+  i++;
 }
 
 //Do-While loop =>Runs atleast one time no matter the condition
-let j=50;
-do{
-    console.log(j);
-    j++;
-}while(j<50)
+let j = 50;
+do {
+  console.log(j);
+  j++;
+} while (j < 50);
 
 //For loop
-let name1="Deepa";
-for(let i=0;i<=name1.length;i++){
-    console.log(name1.charAt(i));
-    for(let j=0;j<=name1.length;j++){
-        if(j===3){
-            continue; //skips the current iteration when j==3
-        }
-        console.log(i,j);
+let name1 = "Deepa";
+for (let i = 0; i <= name1.length; i++) {
+  console.log(name1.charAt(i));
+  for (let j = 0; j <= name1.length; j++) {
+    if (j === 3) {
+      continue; //skips the current iteration when j==3
     }
+    console.log(i, j);
+  }
 }
 
 //Functions - called when needed
-let emailId="dfgkdddddddfgdg@gmail.com";
+let emailId = "dfgkdddddddfgdg@gmail.com";
 //1.Function Declaration- commonly used, Can be called before it is defined
-function getUserNameFromEmail(email){
-    return (email.slice(0,email.indexOf("@"))); //slice is inbuilt function
+function getUserNameFromEmail(email) {
+  return email.slice(0, email.indexOf("@")); //slice is inbuilt function
 }
- 
+
 console.log(getUserNameFromEmail(emailId));
 
 //2.Function Expression
-const toProperCase = function (name){
-    return name.charAt(0).toUpperCase()+ name.slice(1).toLowerCase();
-}
+const toProperCase = function (name) {
+  return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+};
 console.log(toProperCase(emailId));
 
 //3.Arrow function - shorter version
-const toProperCase1 = (name) =>  name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+const toProperCase1 = (name) =>
+  name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
 function add(a, b) {
   return a + b;
@@ -220,39 +221,45 @@ const divide = (a, b) => a / b;
 //const -> Scope is block level.Not Reassignable. Not Redeclarable.
 
 //Array
-const myArray =[];
-myArray[0]="html";
-myArray[1]="css";
-myArray[2]=123;
-myArray[3]=true;
-myArray[4]=false;
+const myArray = [];
+myArray[0] = "html";
+myArray[1] = "css";
+myArray[2] = 123;
+myArray[3] = true;
+myArray[4] = false;
 
 console.log(myArray.length);
-console.log(myArray[myArray.length-1]);
+console.log(myArray[myArray.length - 1]);
 
-myArray.push("js");//adds elt at the last
-myArray.pop();//deletes the last elt
-myArray.unshift("df");//adds elt at the first
-myArray.shift();//deletes elt from the first
-myArray.splice(2,1,"ghh");//2 -deletes the 2nd item , 1 - tells how many items to delete, "ghh" - ghh replaced in 2nd position
-const newArray = myArray.slice(1,3);//creates a copy of new array with 2 elts from index 1
-newArray.reverse();//reverses the array
-const copyStr = myArray.join();//creates a copy of strings separated by , instead of array
+myArray.push("js"); //adds elt at the last
+myArray.pop(); //deletes the last elt
+myArray.unshift("df"); //adds elt at the first
+myArray.shift(); //deletes elt from the first
+myArray.splice(2, 1, "ghh"); //2 -deletes the 2nd item , 1 - tells how many items to delete, "ghh" - ghh replaced in 2nd position
+const newArray = myArray.slice(1, 3); //creates a copy of new array with 2 elts from index 1
+newArray.reverse(); //reverses the array
+const copyStr = myArray.join(); //creates a copy of strings separated by , instead of array
 
-const newArray1 = myArray.concat(newArray);//combines both array as single array
-const newArray2 = [...myArray,...newArray];//spread operator does the same job as concat
-const dim2Array = [myArray,newArray]; //This is 2 dimensional array
-console.log(dim2Array[1][1]); 
+const newArray1 = myArray.concat(newArray); //combines both array as single array
+const newArray2 = [...myArray, ...newArray]; //spread operator does the same job as concat
+const dim2Array = [myArray, newArray]; //This is 2 dimensional array
+console.log(dim2Array[1][1]);
 
 //object- key-value pairs in curly braces
-const myObj = {myName:"Deepa"};
+const myObj = { myName: "Deepa" };
 console.log(myObj.myName);
 
-const myObj1= {num:23, completed:false, frontend:{basic:"html",design:"css",action:"js"}, action:function(){
+const myObj1 = {
+  num: 23,
+  completed: false,
+  frontend: { basic: "html", design: "css", action: "js" },
+  action: function () {
     return "Hello World!";
-}, action1:function(){
+  },
+  action1: function () {
     return `Learn ${this.frontend.action}`;
-}};
+  },
+};
 console.log(myObj1.frontend.basic);
 console.log(myObj1.frontend["action"]);
 console.log(myObj1.action());
@@ -260,18 +267,19 @@ console.log(myObj1.action1());
 
 //Inheritance
 const vehicle = {
-    door:3,
-    engine:function(){
-        return "sdsdgf-engine";
-    }
+  door: 3,
+  engine: function () {
+    return "sdsdgf-engine";
+  },
 };
 console.log(vehicle.engine());
 
-const car =Object.create(vehicle);//Inheriting Vehicle properties
+const car = Object.create(vehicle); //Inheriting Vehicle properties
 car.wheels = 4;
-car.engine = function(){ //overriding the engine function
-    return "dfgghh-engine"; 
-}
+car.engine = function () {
+  //overriding the engine function
+  return "dfgghh-engine";
+};
 console.log(car.door);
 console.log(car.engine());
 
@@ -281,81 +289,86 @@ console.log(tesla.engine());
 
 console.log(Object.keys(car));
 console.log(Object.values(car));
-console.log(tesla.hasOwnProperty("door"));// if tesla has door property, true will be returned
+console.log(tesla.hasOwnProperty("door")); // if tesla has door property, true will be returned
 delete tesla.door; // deletes door property from tesla obj
 
 const movie = {
-    actor: "Vijay",
-    music:"Anirudh",
-    director:"Murugadoss",
-    producer: "Anbu"
+  actor: "Vijay",
+  music: "Anirudh",
+  director: "Murugadoss",
+  producer: "Anbu",
 };
 
 //For - In loop
-for(let parts in car){
-    console.log(car[parts]);
+for (let parts in car) {
+  console.log(car[parts]);
 }
 
 //destructuring the objects
-const {actor:myFavActor, director:myFavDir} = movie; //Here actor value from movie is set to myFavActor var
-console.log(myFavActor,myFavDir);
-const {actor,music,director,producer} = movie; // now actor,music,director,producer becomes variables since the names are same as obj and corresponding values will be assigned from movie obj;
+const { actor: myFavActor, director: myFavDir } = movie; //Here actor value from movie is set to myFavActor var
+console.log(myFavActor, myFavDir);
+const { actor, music, director, producer } = movie; // now actor,music,director,producer becomes variables since the names are same as obj and corresponding values will be assigned from movie obj;
 console.log(music);
 
-function hero({actor}){
-    return `The hero of this movie is ${actor}`
-};//if {} is not added in the parameter the whole obj will be displayed
+function hero({ actor }) {
+  return `The hero of this movie is ${actor}`;
+} //if {} is not added in the parameter the whole obj will be displayed
 console.log(hero(movie));
 
 //classes
 const myDosa = {
-    size: "medium",
-    flavor: "masala",
-    cook: function(){
-        return console.log(`Cooking a ${this.size} ${this.flavor} variety Dosa.`);
-    }
+  size: "medium",
+  flavor: "masala",
+  cook: function () {
+    return console.log(`Cooking a ${this.size} ${this.flavor} variety Dosa.`);
+  },
 };
 myDosa.cook();
 
 //Class acts as a blueprint to create an object
 class Dosa {
-    constructor(dosaType, dosaSize, dosaFlavor){
-        this.type = dosaType;
-        this.size = dosaSize;
-        this.flavor= dosaFlavor;
-        this.toppings=["onion"];
-    }
-    getToppings(){
-        return this.toppings;
-    }
-    setToppings(toppings){
-        this.toppings.push(toppings);
-    }
-    cook(){
-         return console.log(`Cooking a ${this.size} size ${this.flavor} flavour ${this.type} dosa with ${this.toppings} toppings.`);
-    }
+  constructor(dosaType, dosaSize, dosaFlavor) {
+    this.type = dosaType;
+    this.size = dosaSize;
+    this.flavor = dosaFlavor;
+    this.toppings = ["onion"];
+  }
+  getToppings() {
+    return this.toppings;
+  }
+  setToppings(toppings) {
+    this.toppings.push(toppings);
+  }
+  cook() {
+    return console.log(
+      `Cooking a ${this.size} size ${this.flavor} flavour ${this.type} dosa with ${this.toppings} toppings.`,
+    );
+  }
 }
-const dosa1 = new Dosa("Special","small","masala");
+const dosa1 = new Dosa("Special", "small", "masala");
 dosa1.cook();
 console.log(dosa1.size);
 
-const dosa2 = new Dosa("Normal","medium","ghee");
+const dosa2 = new Dosa("Normal", "medium", "ghee");
 dosa2.setToppings("Tomato");
 dosa2.setToppings("Cheese");
 dosa2.cook();
 
 //Class Inheritance
-class SpecialDosa extends Dosa { //Inheriting Dosa characteristics into SpecialDosa
-    constructor(dosaType, dosaSize, dosaFlavor){
-        super(dosaType, dosaSize, dosaFlavor); //super class constructor should be initialized first before child class constructor properties
-        this.dosaShape= "Heart";// child class constructor property
-    }
-    presentation(){
-        console.log(`Your desired dosa shape is ${this.dosaShape} with toppings ${this.toppings}`);
-    }
+class SpecialDosa extends Dosa {
+  //Inheriting Dosa characteristics into SpecialDosa
+  constructor(dosaType, dosaSize, dosaFlavor) {
+    super(dosaType, dosaSize, dosaFlavor); //super class constructor should be initialized first before child class constructor properties
+    this.dosaShape = "Heart"; // child class constructor property
+  }
+  presentation() {
+    console.log(
+      `Your desired dosa shape is ${this.dosaShape} with toppings ${this.toppings}`,
+    );
+  }
 }
 
-const splDosa= new SpecialDosa("Special","large","mint");
+const splDosa = new SpecialDosa("Special", "large", "mint");
 splDosa.presentation();
 
 //Factory Function -Is a JavaScript function that creates and returns objects. It is like a blueprint or template for making multiple objects without using classes or the new keyword. Factory Functions can be used instead of classes becoz the data cannot be changed from outside like in classes. Factory Function provides data privacy
@@ -365,9 +378,9 @@ function createCar(brand, model, year) {
     brand: brand,
     model: model,
     year: year,
-    info: function() {
+    info: function () {
       return `${this.year} ${this.brand} ${this.model}`;
-    }
+    },
   };
 }
 
@@ -381,9 +394,9 @@ console.log(car2.info()); // 2022 Honda Civic
 const createUser = (name, email) => ({
   name,
   email,
-  displayInfo: function() {
+  displayInfo: function () {
     return `${this.name} - ${this.email}`;
-  }
+  },
 });
 
 const user1 = createUser("Deepa", "deepa@gmail.com");
@@ -391,9 +404,9 @@ console.log(user1.displayInfo()); // Deepa - deepa@gmail.com
 
 //class using private datas - using factory mtds we cannot access the variables at all, to solve this problem # is introduced to make the properties as private in classes which cannot be accessed from outside
 class BankAccount {
-  #balance;     // private
-  #pin;         // private
-  accountHolder;  // public
+  #balance; // private
+  #pin; // private
+  accountHolder; // public
 
   constructor(holder, balance, pin) {
     this.accountHolder = holder;
@@ -416,9 +429,9 @@ class BankAccount {
 }
 
 const account = new BankAccount("Deepa", 5000, 1234);
-console.log(account.accountHolder);  // "Deepa" (public - works)
-console.log(account.getBalance());   // 5000 (through method - works)
-console.log(account.withdraw(1000,1234));   // 5000 (through method - works)
+console.log(account.accountHolder); // "Deepa" (public - works)
+console.log(account.getBalance()); // 5000 (through method - works)
+console.log(account.withdraw(1000, 1234)); // 5000 (through method - works)
 //console.log(account.#balance);       // Error! Private field
 
 //JSON - JavaScript Object Notation. This is text format to send and receive data to server side in many programming languages since it is language independent
@@ -431,7 +444,7 @@ const course = {
   instructor: "Deepa",
   price: 99.99,
   students: ["Alice", "Bob", "Charlie"],
-  isActive: true
+  isActive: true,
 };
 
 // 2. Convert to JSON (for sending to server)
@@ -442,11 +455,12 @@ console.log(jsonData);
 // fetch('/api/courses', { method: 'POST', body: jsonData });
 
 // 4. Receive JSON from server
-const receivedJSON = '{"id":101,"title":"JavaScript Basics","instructor":"Deepa","price":99.99,"students":["Alice","Bob","Charlie"],"isActive":true}';
+const receivedJSON =
+  '{"id":101,"title":"JavaScript Basics","instructor":"Deepa","price":99.99,"students":["Alice","Bob","Charlie"],"isActive":true}';
 
 // 5. Convert back to object
 const courseData = JSON.parse(receivedJSON);
-console.log(courseData.title);      // JavaScript Basics
+console.log(courseData.title); // JavaScript Basics
 console.log(courseData.students[0]); // Alice
 
 //Errors and Error Handling
@@ -456,21 +470,19 @@ console.log(courseData.students[0]); // Alice
 //3. Type Error - Wrong data type operation:
 //4. Range Error - Invalid range:
 
-"use strict"; //strict is used to follow the rules strictly in js, so easy to catch type errors.
+("use strict"); //strict is used to follow the rules strictly in js, so easy to catch type errors.
 
 try {
   // Code that might cause an error
-  let result = 10 / 0;  // No error - valid
-  console.log(result);  // Infinity
-  
+  let result = 10 / 0; // No error - valid
+  console.log(result); // Infinity
 } catch (error) {
   // Runs if error occurs
   console.log("An error occurred:", error.message);
-  
 } finally {
   // Always runs (cleanup code)
   console.log("This runs no matter what");
-}//Without try-catch, the program crashes here.
+} //Without try-catch, the program crashes here.
 
 //Use throw to create your own custom errors:
 function validateAge(age) {
@@ -486,47 +498,96 @@ function validateAge(age) {
 try {
   console.log(validateAge(-5));
 } catch (error) {
-  console.log("Error:", error.message);  // Error: Age cannot be negative
+  console.log("Error:", error.message); // Error: Age cannot be negative
 }
 
 //Document Object Model (DOM)
-const view1=document.getElementById("view1");
+const view1 = document.getElementById("view1");
 console.log(view1);
 
-const view2=document.querySelector("#view2");//to indicate that view2 is ID we need to mention # before id name
+const view2 = document.querySelector("#view2"); //to indicate that view2 is ID we need to mention # before id name
 console.log(view2);
 
-view1.style.display="flex"; //used to override the styles which are set in style.css
-view2.style.display="flex"; 
+view1.style.display = "flex"; //used to override the styles which are set in style.css
+view2.style.display = "flex";
 
-const views=document.getElementsByClassName("view");
+const views = document.getElementsByClassName("view");
 console.log(views);
-const views1=document.querySelectorAll(".view");// . is used to select class
+const views1 = document.querySelectorAll(".view"); // . is used to select class
 console.log(views1);
 
-const divs = view1.querySelectorAll("div");//view1 has already selected section from that we are again selecting div
+const divs = view1.querySelectorAll("div"); //view1 has already selected section from that we are again selecting div
 console.log(divs);
-const divs1= view1.getElementsByTagName("div");
+const divs1 = view1.getElementsByTagName("div");
 console.log(divs1);
 
 const evenDivs = view1.querySelectorAll("div:nth-of-type(2n)");
 console.log(evenDivs);
-evenDivs[4].style.backgroundColor="purple";
 
 //Using the index to access the element
-for (let i in evenDivs){
+/* for (let i in evenDivs){
     evenDivs[i].style.backgroundColor="purple";  // Access element using index
     console.log(i);
-}
+} */
 
 // Using for...of loop (Better)
-for (let element of evenDivs){
+/* for (let element of evenDivs){
     element.style.backgroundColor="purple";  // element is the actual DOM object
     console.log(element);
-}
+} */
 
 //Using forEach (Modern)
 evenDivs.forEach((element) => {
-    element.style.backgroundColor="purple";
-    console.log(element);
+  element.style.backgroundColor = "purple";
+  console.log(element);
 });
+
+console.log(evenDivs[0].parentElement);
+console.log(evenDivs[0].parentElement.children);
+console.log(evenDivs[0].parentElement.childNodes);
+console.log(evenDivs[0].parentElement.hasChildNodes());
+console.log(evenDivs[0].parentElement.lastChild);
+console.log(evenDivs[0].parentElement.lastElementChild);
+console.log(evenDivs[0].parentElement.firstChild);
+console.log(evenDivs[0].parentElement.firstElementChild);
+console.log(evenDivs[0].nextSibling);
+console.log(evenDivs[0].nextElementSibling);
+console.log(evenDivs[0].previousSibling);
+console.log(evenDivs[0].previousElementSibling);
+
+const navText = document.querySelector("nav h1");
+console.log(navText);
+navText.textContent = "Hello World"; //changes the text in Nav
+
+const navtext2 = document.querySelector("nav").innerText;
+console.log(navtext2);
+
+const navtext3 = document.querySelector("nav"); //innerHTML is used to get the content of the element along with the HTML tags
+navtext3.innerHTML = "<p>This is a JS Document</p>";
+navtext3.style.justifyContent = "center";
+
+view2.style.display = "flex";
+view2.style.flexDirection = "row";
+view2.style.flexWrap = "wrap";
+view2.style.margin = "10px";
+view2.lastElementChild.remove(); //removes the last child elt
+
+const createDiv = (parent, content) => {
+  //Arrow function to create new divs dynamically in js
+  const newDiv = document.createElement("div");
+  newDiv.textContent = content;
+  newDiv.style.color = "white";
+  newDiv.style.width = "100px";
+  newDiv.style.height = "100px";
+  newDiv.style.backgroundColor = "green";
+  newDiv.style.display = "flex";
+  newDiv.style.flexDirection = "column";
+  newDiv.style.justifyContent = "center";
+  newDiv.style.alignItems = "center";
+  newDiv.style.margin = "6px";
+  parent.append(newDiv);
+};
+
+for (let i = 1; i <= 12; i++) {
+  createDiv(view2, i);
+}
