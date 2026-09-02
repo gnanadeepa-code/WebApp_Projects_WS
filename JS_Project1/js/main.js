@@ -489,3 +489,44 @@ try {
   console.log("Error:", error.message);  // Error: Age cannot be negative
 }
 
+//Document Object Model (DOM)
+const view1=document.getElementById("view1");
+console.log(view1);
+
+const view2=document.querySelector("#view2");//to indicate that view2 is ID we need to mention # before id name
+console.log(view2);
+
+view1.style.display="flex"; //used to override the styles which are set in style.css
+view2.style.display="flex"; 
+
+const views=document.getElementsByClassName("view");
+console.log(views);
+const views1=document.querySelectorAll(".view");// . is used to select class
+console.log(views1);
+
+const divs = view1.querySelectorAll("div");//view1 has already selected section from that we are again selecting div
+console.log(divs);
+const divs1= view1.getElementsByTagName("div");
+console.log(divs1);
+
+const evenDivs = view1.querySelectorAll("div:nth-of-type(2n)");
+console.log(evenDivs);
+evenDivs[4].style.backgroundColor="purple";
+
+//Using the index to access the element
+for (let i in evenDivs){
+    evenDivs[i].style.backgroundColor="purple";  // Access element using index
+    console.log(i);
+}
+
+// Using for...of loop (Better)
+for (let element of evenDivs){
+    element.style.backgroundColor="purple";  // element is the actual DOM object
+    console.log(element);
+}
+
+//Using forEach (Modern)
+evenDivs.forEach((element) => {
+    element.style.backgroundColor="purple";
+    console.log(element);
+});
