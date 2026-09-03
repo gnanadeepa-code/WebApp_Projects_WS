@@ -1,18 +1,38 @@
 import earnMoney from "./main1.js"; //used to import functions from other js files
 import { growMoney as grow, giveMoney as give } from "./main1.js";
 import * as money from "./main1.js"; //* is used to import all the functions available in the main1.js file
-import { Greeting } from "./main1.js";
+import { Greeting, users } from "./main1.js";
 
+//Modules
 console.log("This is a JS file");
 console.log(earnMoney());
 console.log(grow());
 console.log(give());
-console.log(money.default());//since earnMoney is given as default , here we cannot give its name directly, b
+console.log(money.default()); //since earnMoney is given as default , here we cannot give its name directly, b
 console.log(money.growMoney());
 console.log(money.giveMoney());
 
 const greet = new Greeting("Deepa");
-console.log(greet.hello);
+console.log(greet.hello());
+
+//Higher Order Functions (HOF) - Is a function that either takes one or more functions as arguments, returns a function as its result, or both. Function are treated as a datatype in js.
+users.forEach((user) => {
+  //Here forEach is a function where we are passing a arrow function as a paramenter inside
+  console.log(user);
+});
+//console.clear; // clears the console
+
+const filteredUsers = users.filter((user) => {
+  //here filter is a fucntion where arrow function is passed as a parameter
+  return user.id == 5;
+});
+console.log(filteredUsers);
+
+const mappedUsers = filteredUsers.map((user) =>
+{
+  return user.name;
+});
+console.log(mappedUsers);
 
 //String
 let myVariable = "This is a document";
