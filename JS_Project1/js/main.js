@@ -618,10 +618,6 @@ document.addEventListener("readystatechange", (func) => {
 
 const initApp = () => {
   const view = document.querySelector("#view3");
-  const div = view.querySelector("div");
-  const h2 = div.querySelector("h2");
-  const nav = document.querySelector("nav");
-
   view.addEventListener("click", (cli) => {
     // view.style.backgroundColor="pink";
     view.classList.add("view3"); //here a new class .view3 will be added to section along with existing .view class
@@ -629,9 +625,13 @@ const initApp = () => {
     view.classList.toggle("view1"); //If we give toggle the class view1 and view2 will switch alternatively on each click
     view.classList.toggle("view2");
   });
+
+  const div = view.querySelector("div");
   div.addEventListener("click", (cli) => {
     view.style.backgroundColor = "blue";
   });
+
+  const h2 = div.querySelector("h2");
   h2.addEventListener(
     "click",
     (cli) => {
@@ -644,15 +644,16 @@ const initApp = () => {
     true, //when useCapture=false (3rd parameter) event bubbling up will happen, where if h2 is clicked div and section will change its colour
   ); //when useCapture=true (3rd parameter) event bubbling down will happen, where if h2 is clicked, first section, div and h2 will change downwards
 
-  /*   nav.addEventListener("mouseenter", (eve) => {
+  /*   nav.addEventListener("mouseover", (eve) => {
     eve.currentTarget.classList.add("height100");
     console.log("mouseover"+eve.target);
   });
-  nav.addEventListener("mouseleave", (eve) => {
+  nav.addEventListener("mouseout", (eve) => {
     eve.currentTarget.classList.remove("height100");
     console.log("mouseout"+eve.target);
   }); */
 
+  const nav = document.querySelector("nav");
   nav.addEventListener("mouseenter", () => {
     nav.classList.add("height100");
   });
@@ -660,4 +661,11 @@ const initApp = () => {
   nav.addEventListener("mouseleave", () => {
     nav.classList.remove("height100");
   });
+
+  const view4 = document.querySelector("#view4");
+  const myForm = view4.querySelector("#myForm");
+  myForm.addEventListener("submit", (event)=>{
+    event.preventDefault(); //This mtd prevents the default behaviour of submitting the text i/p when Enter button is clicked. Becoz we need to validate the data before submitting it to DB.
+    console.log("Submit Event");
+  })
 };
