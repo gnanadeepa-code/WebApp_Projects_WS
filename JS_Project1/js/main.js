@@ -668,4 +668,22 @@ const initApp = () => {
     event.preventDefault(); //This mtd prevents the default behaviour of submitting the text i/p when Enter button is clicked. Becoz we need to validate the data before submitting it to DB.
     console.log("Submit Event");
   })
+
+  //Web Storage API
+  const myContent = ["Earn","Grow","Give"];
+  const myObject = {
+    name: "Website",
+    myContent:["Earn","Grow","Give"],
+    logName:function(){
+      console.log(this.name);
+    }
+  };
+  window.sessionStorage.setItem("mySessionStore", JSON.stringify(myObject));
+  /* window.localStorage.setItem("mySessionStore1", JSON.stringify(myObject)); */ //localStorage stores the data in local machine so even if browser closed the data available in local
+  //window.localStorage.removeItem("mySessionStore1"); //removes the data
+  const mySessionData = JSON.parse(sessionStorage.getItem("mySessionStore"));
+  console.log(mySessionData);
 };
+
+
+
