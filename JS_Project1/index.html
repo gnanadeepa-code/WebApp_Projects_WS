@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/main.js"></script>
+    <script defer type="module" src="js/main.js"></script>
     <!--Here "defer" is important to load the js after the html elts are created. Else we will get null in js while trying to access the html elts dynamically-->
+    <!--type="module" is needed when we are using more than 1 js files as a module.When type is mentioned as module no need to mention "defer" explicitly and also "use strict" also will be activated by default to find the errors easily. when the application is launced using live server only the module will work.-->
 </head>
 
 <body>

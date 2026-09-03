@@ -1,4 +1,19 @@
+import earnMoney from "./main1.js"; //used to import functions from other js files
+import { growMoney as grow, giveMoney as give } from "./main1.js";
+import * as money from "./main1.js"; //* is used to import all the functions available in the main1.js file
+import { Greeting } from "./main1.js";
+
 console.log("This is a JS file");
+console.log(earnMoney());
+console.log(grow());
+console.log(give());
+console.log(money.default());//since earnMoney is given as default , here we cannot give its name directly, b
+console.log(money.growMoney());
+console.log(money.giveMoney());
+
+const greet = new Greeting("Deepa");
+console.log(greet.hello);
+
 //String
 let myVariable = "This is a document";
 console.log(typeof myVariable);
@@ -664,19 +679,19 @@ const initApp = () => {
 
   const view4 = document.querySelector("#view4");
   const myForm = view4.querySelector("#myForm");
-  myForm.addEventListener("submit", (event)=>{
+  myForm.addEventListener("submit", (event) => {
     event.preventDefault(); //This mtd prevents the default behaviour of submitting the text i/p when Enter button is clicked. Becoz we need to validate the data before submitting it to DB.
     console.log("Submit Event");
-  })
+  });
 
   //Web Storage API
-  const myContent = ["Earn","Grow","Give"];
+  const myContent = ["Earn", "Grow", "Give"];
   const myObject = {
     name: "Website",
-    myContent:["Earn","Grow","Give"],
-    logName:function(){
+    myContent: ["Earn", "Grow", "Give"],
+    logName: function () {
       console.log(this.name);
-    }
+    },
   };
   window.sessionStorage.setItem("mySessionStore", JSON.stringify(myObject));
   /* window.localStorage.setItem("mySessionStore1", JSON.stringify(myObject)); */ //localStorage stores the data in local machine so even if browser closed the data available in local
@@ -684,6 +699,3 @@ const initApp = () => {
   const mySessionData = JSON.parse(sessionStorage.getItem("mySessionStore"));
   console.log(mySessionData);
 };
-
-
-
