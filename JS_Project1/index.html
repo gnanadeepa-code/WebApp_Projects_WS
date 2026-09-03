@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Document</title>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/main.js"></script>
+    <!--Here "defer" is important to load the js after the html elts are created. Else we will get null in js while trying to access the html elts dynamically-->
 </head>
+
 <body>
     <nav>
         <h1>
@@ -31,6 +34,12 @@
         <section id="view2" class="view view2">
             <h2>My 2nd view</h2>
         </section>
+        <section id="view3" class="view">
+            <div>
+                <h2>My 3rd view</h2>
+            </div>
+        </section>
     </main>
 </body>
+
 </html>

@@ -588,6 +588,58 @@ const createDiv = (parent, content) => {
   parent.append(newDiv);
 };
 
-for (let i = 1; i <= 12; i++) {
+for (let i = 1; i <= 6; i++) {
   createDiv(view2, i);
 }
+
+//Event Listeners
+
+const view3 = document.querySelector("#view3");
+const div = view3.querySelector("div");
+const h2 = div.querySelector("h2");
+
+const clickEvent = () => {
+  alert("Click event listener");
+};
+
+h2.addEventListener("click", clickEvent, false);
+//h2.removeEventListener("click",clickEvent,false); //This removes the eventlistener
+
+h2.addEventListener("click", (cli) => {
+  cli.target.textContent = "Event completed";
+});
+
+document.addEventListener("readystatechange", (func) => {
+  if (func.target.readyState == "complete") {
+    console.log("complete");
+    initApp();
+  }
+});
+
+const initApp = () => {
+  const view = document.querySelector("#view3");
+  const div = view.querySelector("div");
+  const h2 = div.querySelector("h2");
+
+  view.addEventListener("click", (cli) => {
+    // view.style.backgroundColor="pink";
+    view.classList.add("view3"); //here a new class .view3 will be added to section along with existing .view class
+    //view.classList.remove("view");
+    view.classList.toggle("view1"); //If we give toggle the class view1 and view2 will switch alternatively on each click
+    view.classList.toggle("view2");
+  });
+  div.addEventListener("mouseover", (cli) => {
+    view.style.backgroundColor = "blue";
+  });
+  h2.addEventListener(
+    "click",
+    (cli) => {
+      cli.stopPropagation(); //This will avoid bubbling up/down of the events
+      const myText = cli.target.textContent;
+      myText === "Clicked"
+        ? (cli.target.textContent = "Unclicked")
+        : (cli.target.textContent = "Clicked");
+    },
+    true, //when useCapture=false (3rd parameter) event bubbling up will happen, where if h2 is clicked div and section will change its colour
+  ); //when useCapture=true (3rd parameter) event bubbling down will happen, where if h2 is clicked, first section, div and h2 will change downwards
+};
