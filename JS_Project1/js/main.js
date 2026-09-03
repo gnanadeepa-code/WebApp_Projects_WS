@@ -620,6 +620,7 @@ const initApp = () => {
   const view = document.querySelector("#view3");
   const div = view.querySelector("div");
   const h2 = div.querySelector("h2");
+  const nav = document.querySelector("nav");
 
   view.addEventListener("click", (cli) => {
     // view.style.backgroundColor="pink";
@@ -628,7 +629,7 @@ const initApp = () => {
     view.classList.toggle("view1"); //If we give toggle the class view1 and view2 will switch alternatively on each click
     view.classList.toggle("view2");
   });
-  div.addEventListener("mouseover", (cli) => {
+  div.addEventListener("click", (cli) => {
     view.style.backgroundColor = "blue";
   });
   h2.addEventListener(
@@ -642,4 +643,21 @@ const initApp = () => {
     },
     true, //when useCapture=false (3rd parameter) event bubbling up will happen, where if h2 is clicked div and section will change its colour
   ); //when useCapture=true (3rd parameter) event bubbling down will happen, where if h2 is clicked, first section, div and h2 will change downwards
+
+  /*   nav.addEventListener("mouseenter", (eve) => {
+    eve.currentTarget.classList.add("height100");
+    console.log("mouseover"+eve.target);
+  });
+  nav.addEventListener("mouseleave", (eve) => {
+    eve.currentTarget.classList.remove("height100");
+    console.log("mouseout"+eve.target);
+  }); */
+
+  nav.addEventListener("mouseenter", () => {
+    nav.classList.add("height100");
+  });
+
+  nav.addEventListener("mouseleave", () => {
+    nav.classList.remove("height100");
+  });
 };

@@ -86,3 +86,6 @@ section {
   background-color: rgb(61, 116, 168);
   color: #fff;
 }
+.height100 {
+  height: 100px;
+}
