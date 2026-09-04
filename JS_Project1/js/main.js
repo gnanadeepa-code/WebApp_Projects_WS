@@ -731,7 +731,7 @@ console.log("Third"); //Since timer is set for the above console.log "second" is
 //Promises used for Async js - 3 states : Pending, Fulfilled, Rejected
 
 const myPromise = new Promise((resolve, reject) => {
-  const error = false;
+  const error = true;
   if (!error) {
     resolve("Yes! resolved the promise.");
   } else {
@@ -739,3 +739,6 @@ const myPromise = new Promise((resolve, reject) => {
   }
 });
 console.log(myPromise); //returns the state of the promise as fulfilled
+myPromise.then((value) => {
+  return value + "welcome"
+}).then(newValue => console.log(newValue)).catch(err=>{console.log(err)})
