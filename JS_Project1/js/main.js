@@ -28,8 +28,7 @@ const filteredUsers = users.filter((user) => {
 });
 console.log(filteredUsers);
 
-const mappedUsers = filteredUsers.map((user) =>
-{
+const mappedUsers = filteredUsers.map((user) => {
   return user.name;
 });
 console.log(mappedUsers);
@@ -719,3 +718,10 @@ const initApp = () => {
   const mySessionData = JSON.parse(sessionStorage.getItem("mySessionStore"));
   console.log(mySessionData);
 };
+
+//Asynchoronous JS
+console.log("First");
+setTimeout(() => {
+  console.log("Second", 2000); //Timer is set to delay
+});
+console.log("Third"); //Since timer is set for the above console.log "second" is printed after "Third" 
