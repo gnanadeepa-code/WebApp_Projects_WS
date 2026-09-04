@@ -724,4 +724,18 @@ console.log("First");
 setTimeout(() => {
   console.log("Second", 2000); //Timer is set to delay
 });
-console.log("Third"); //Since timer is set for the above console.log "second" is printed after "Third" 
+console.log("Third"); //Since timer is set for the above console.log "second" is printed after "Third"
+
+//callback functions - functions inside another function is hell, this is not practised now and not good practice
+
+//Promises used for Async js - 3 states : Pending, Fulfilled, Rejected
+
+const myPromise = new Promise((resolve, reject) => {
+  const error = false;
+  if (!error) {
+    resolve("Yes! resolved the promise.");
+  } else {
+    reject("No! rejected the promise.");
+  }
+});
+console.log(myPromise); //returns the state of the promise as fulfilled
