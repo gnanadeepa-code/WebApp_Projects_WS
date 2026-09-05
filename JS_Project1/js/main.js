@@ -739,6 +739,20 @@ const myPromise = new Promise((resolve, reject) => {
   }
 });
 console.log(myPromise); //returns the state of the promise as fulfilled
+
+const myNextPromise = new Promise((resolve,reject)=>{
+  setTimeout(() => {
+    resolve("myNextPromise Resolved.")
+  }, 3000);
+})
+myNextPromise.then(value=>{
+  console.log(value);
+})
+
 myPromise.then((value) => {
   return value + "welcome"
 }).then(newValue => console.log(newValue)).catch(err=>{console.log(err)})
+
+//fetch used to brings data from another server to our app
+const users = fetch("https://jsonplaceholder.typicode.com/users");
+console.log(users);//returns promise with its state will be displayed
