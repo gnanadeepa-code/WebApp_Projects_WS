@@ -728,7 +728,7 @@ console.log("Third"); //Since timer is set for the above console.log "second" is
 
 //callback functions - functions inside another function is hell, this is not practised now and not good practice
 
-//Promises used for Async js - 3 states : Pending, Fulfilled, Rejected
+//Promises used for Async js instead of callback functions since callback hell is issue. 3 states of Promises: Pending, Fulfilled, Rejected
 
 const myPromise = new Promise((resolve, reject) => {
   const error = true;
@@ -763,3 +763,18 @@ const usersResp = fetch("https://jsonplaceholder.typicode.com/users").then(respn
   });
 })
 console.log(usersResp);//returns promise with its state will be displayed
+
+//Async / Await are used instead of Promises since using 'then ' makes difficulty in code readability
+const usersResp1= async ()=>{ //to use await we need to mention async in that particular function
+  const response = await fetch("https://jsonplaceholder.typicode.com/users"); // here js waits until the fetch process is completed
+  const userData = await response.json(); // here js waits until the response is parsed into json
+  console.log(userData);
+  return userData;
+}
+
+const func1 = async () =>{
+  const data = await usersResp1();// calling the above function
+  return data;
+}
+
+func1();
