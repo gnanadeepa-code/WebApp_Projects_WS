@@ -745,14 +745,21 @@ const myNextPromise = new Promise((resolve,reject)=>{
     resolve("myNextPromise Resolved.")
   }, 3000);
 })
-myNextPromise.then(value=>{
+myNextPromise.then(value=>{//.then is used to do next action only after the first action is finished as a chain of events
   console.log(value);
 })
 
 myPromise.then((value) => {
   return value + "welcome"
-}).then(newValue => console.log(newValue)).catch(err=>{console.log(err)})
+}).then(newValue => console.log(newValue)).catch(err=>{console.log(err)});
 
 //fetch used to brings data from another server to our app
-const users = fetch("https://jsonplaceholder.typicode.com/users");
-console.log(users);//returns promise with its state will be displayed
+const usersResp = fetch("https://jsonplaceholder.typicode.com/users").then(respnse =>{
+  console.log(respnse);
+  return respnse.json();
+}).then(users=>{
+  users.forEach(user => {
+    console.log(user);
+  });
+})
+console.log(usersResp);//returns promise with its state will be displayed
