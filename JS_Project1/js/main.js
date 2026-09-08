@@ -831,3 +831,41 @@ const postDadJoke = async (jokeObject) => {
 };
 
 postDadJoke(jokeObj);//posting the data
+
+//How to use Async/Await in real coding
+//To get data from the Html form. (Instead of hardcoding get real data from form)
+const getDataFromForm = () => {
+  const requestObj = {
+    firstName : "P",
+    lastName : "Deepa",
+    email : "deepa@gmail.com",
+    phNo: 9876543210
+  }
+  return requestObj;
+}
+
+//API Ninjas provides API catalogs for development which is paid and limited free testing resources as well
+const buildRequestUrl = (requestData) => {
+  const url = `http://xxxxxxxx.xxx?firstName=${requestData.firstName}&lastName=${requestData.lastName}&email=${requestData.email}&phNo=${requestData.phNo}`;
+  return url;
+}
+
+const requestUserData = async(url) => {
+  const response = await fetch(url);
+  const jsonResponse = await response.json();
+  const name = jsonResponse.value.name;
+  postDetailsToPage(name);
+}
+
+const postDetailsToPage = (name1) => {
+  console.log(name1);
+}
+
+const processCustDetailsRequest = async() => {
+  const requestData = getDataFromForm();
+  const requestUrl = buildRequestUrl(requestData);
+  await requestUserData(requestUrl);
+  console.log('User details finished');
+}
+
+processCustDetailsRequest();
