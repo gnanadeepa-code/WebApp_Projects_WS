@@ -82,7 +82,7 @@ console.log(myName.charAt(Math.floor(Math.random() * nlen)));
 //Conditional Statements - If (or ||, and &&) - order of the if stmts are important
 let ans;
 if (myName.endsWith("A") || myName.endsWith("a")) {
-  ans = `Yes, the name ${myName} ends with a.`;
+  ans = `Yes, the name ${myName} ends with a.`; //`` is the template literal used in js for dynamic string creation
 } else if (myName.endsWith("S") || myName.endsWith("s")) {
   ans = `No, the name ${myName} does not ends with s.`;
 } else {
@@ -740,41 +740,94 @@ const myPromise = new Promise((resolve, reject) => {
 });
 console.log(myPromise); //returns the state of the promise as fulfilled
 
-const myNextPromise = new Promise((resolve,reject)=>{
+const myNextPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("myNextPromise Resolved.")
+    resolve("myNextPromise Resolved.");
   }, 3000);
-})
-myNextPromise.then(value=>{//.then is used to do next action only after the first action is finished as a chain of events
+});
+myNextPromise.then((value) => {
+  //.then is used to do next action only after the first action is finished as a chain of events
   console.log(value);
-})
+});
 
-myPromise.then((value) => {
-  return value + "welcome"
-}).then(newValue => console.log(newValue)).catch(err=>{console.log(err)});
+myPromise
+  .then((value) => {
+    return value + "welcome";
+  })
+  .then((newValue) => console.log(newValue))
+  .catch((err) => {
+    console.log(err);
+  });
 
 //fetch used to brings data from another server to our app
-const usersResp = fetch("https://jsonplaceholder.typicode.com/users").then(respnse =>{
-  console.log(respnse);
-  return respnse.json();
-}).then(users=>{
-  users.forEach(user => {
-    console.log(user);
+const usersResp = fetch("https://jsonplaceholder.typicode.com/users")
+  .then((respnse) => {
+    console.log(respnse);
+    return respnse.json();
+  })
+  .then((users) => {
+    users.forEach((user) => {
+      console.log(user);
+    });
   });
-})
-console.log(usersResp);//returns promise with its state will be displayed
+console.log(usersResp); //returns promise with its state will be displayed
 
 //Async / Await are used instead of Promises since using 'then ' makes difficulty in code readability
-const usersResp1= async ()=>{ //to use await we need to mention async in that particular function
+const usersResp1 = async () => {
+  //to use await we need to mention async in that particular function
   const response = await fetch("https://jsonplaceholder.typicode.com/users"); // here js waits until the fetch process is completed
   const userData = await response.json(); // here js waits until the response is parsed into json
   console.log(userData);
   return userData;
-}
+};
 
-const func1 = async () =>{
-  const data = await usersResp1();// calling the above function
+const myUsers = {
+  //Here myUser is an object which contains an array userList[]
+  userList: [],
+};
+
+const func1 = async () => {
+  const data = await usersResp1(); // calling the above function
+  myUsers.userList = data;
+  console.log(myUsers); //Since now myUsers is in local scope now the users data will be printed unlike the next line where since it takes from global value and await not used it prints empty. Be careful while coding this.
   return data;
-}
+};
 
 func1();
+console.log(myUsers); // Here myUsers will be empty since the above fuction is async js starts that function and will not wait to complete, instead it moves to the next line where still the values for the userList array was not assigned so when myUsers is printed it will be empty
+
+const getDadJoke = async () => {
+  const response = await fetch("https://icanhazdadjoke.com/", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      //Accept: "text/plain",
+    },
+  });
+  const jsonJokeData = await response.json();
+  console.log(jsonJokeData);
+  console.log(jsonJokeData.joke);
+  /* const jsonJokeData = await response.text();
+  console.log(jsonJokeData); */
+};
+
+getDadJoke();//getting the data
+
+const jokeObj = {
+  id: "VKexkV0LeFd",
+  joke: "I was in an 80's band called the prevention. We were better than the cure.",
+};
+const postDadJoke = async (jokeObject) => {
+  const response = await fetch("https://httpbin.org/post", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body:JSON.stringify(jokeObject)
+  });
+
+  const responseData = await response.json();
+  console.log(responseData);
+};
+
+postDadJoke(jokeObj);//posting the data
