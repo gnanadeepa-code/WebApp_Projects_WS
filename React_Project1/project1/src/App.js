@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const name = "Deepa";
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +18,8 @@ function App() {
         >
           Learn React
         </a>
+        <p>{name}</p> {/*Here the curly braces are used to treat the var name as js var */}
+        {/*React cannot take objects,boolean values as child*/}
       </header>
     </div>
   );
