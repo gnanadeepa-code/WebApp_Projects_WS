@@ -1,8 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   const name = "Deepa";
+
+  function handleNameChange() {
+    const names = ["Earn", "Grow", "Give"];
+    const num = Math.floor(Math.random() * 3);
+    return names[num];
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +25,10 @@ function App() {
         >
           Learn React
         </a>
-        <p>{name}</p> {/*Here the curly braces are used to treat the var name as js var */}
+        <p>{name}</p>{" "}
+        {/*Here the curly braces are used to treat the var name as js var */}
         {/*React cannot take objects,boolean values as child*/}
+        <p>Let's {handleNameChange()} Money</p>
       </header>
     </div>
   );
