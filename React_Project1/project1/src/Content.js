@@ -32,7 +32,7 @@ const Content = () => {
       {/* <button onClick={handleClick()}> Click Me</button> = handleClick() -> if called like this when page is rendering itself the click event will be generated.This is wrong don't call like this.*/}
       <p><button onClick={() => handleClick2('React')}> Which Technology?</button></p>
       {/* arrow function is used to call the function with parameter,so that the action takes place only when the button is clicked unlike page rendering itself*/}
-      <p><button onClick={(event) => handleClick3(event)}> Passing event in a function</button></p>
+      <p><button onDoubleClick={(event) => handleClick3(event)}> Passing event in a function</button></p>
       {/* arrow function is used to pass the event itself as an object to perform some operations with its event.*/}
     </main>
   );
