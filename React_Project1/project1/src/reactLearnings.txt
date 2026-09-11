@@ -3,5 +3,10 @@ GOtcha's of Hooks in React:
  Hooks are the functions which does specific useful things.
  import hooks using {} in React
  state is the data which is gonna change
- 
+
+In legacy code class components were there, we cannot use the hooks inside it.
+
+the orders of the useState hook is necessary
+
+hooks cannot be called inside a condition stmts
 
