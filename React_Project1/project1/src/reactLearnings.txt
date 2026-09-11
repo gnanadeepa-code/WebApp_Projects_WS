@@ -1,0 +1,7 @@
+GOtcha's of Hooks in React:
+------------------------------
+ Hooks are the functions which does specific useful things.
+ import hooks using {} in React
+ state is the data which is gonna change
+ 
+
