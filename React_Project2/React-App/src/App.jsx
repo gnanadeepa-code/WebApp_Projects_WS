@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Course name="HTML5" desc="HTML5 - web language" show={true} image={HTML}/>
       <Course name="CSS" desc="CSS - Styling language" image={CSS}/>
-      <Course   image={JS} />
+      <Course name="JS" desc="JS - Event handling" image={JS} />
       <Footer />
     </>
   );
