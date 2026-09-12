@@ -1,0 +1,27 @@
+body{
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.headerStyle{
+  justify-content: center;
+  align-content: center;
+}
+
+.card{
+  margin: 2rem;
+  background-color: beige;
+  max-width: 10em;
+  border: 1px solid black;
+  border-radius: 6%;
+  display: inline-block;
+  
+  text-align: center;
+  align-items: center;
+}
+
+.footerStyle{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,6 @@
 function Footer() {
     return(
-        <footer>
+        <footer className="footerStyle">
             Copyrights &copy; reserved 2026
         </footer>
     );

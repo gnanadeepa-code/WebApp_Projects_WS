@@ -1,6 +1,6 @@
 function Navbar(){
     return (
-        <nav>
+        <nav className="headerStyle">
             <h2>React Project</h2>
             <button>Login</button>
         </nav>

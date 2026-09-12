@@ -1,13 +1,15 @@
-const course1 = "HTML"
-
-function Course(){
-    return(
-        <div>
-            <img src="" alt="" />
-            <h3>{course1}</h3>
-            <p>HTML Course</p>
+function Course({
+    image,
+    name = "HTML",
+    desc = "Web language"
+}) {
+    return (
+        <div className="card">
+            <img src={image} alt="Image" />
+            <h3>{name}</h3>
+            <p>{desc}</p>
         </div>
     );
 }
 
-export default Course
+export default Course;
