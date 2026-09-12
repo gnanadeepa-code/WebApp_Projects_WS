@@ -1,6 +1,6 @@
 import "./App.css";
-import Course from "./Course";
-import Footer from "./Footer";
+import Course from "./Course"; //with default export while importing its name can be changed arbitrarily eg. MyCourses
+import {Footer} from "./Footer"; //but with named export we cannot rename the components name, which avoids confusions
 import Navbar from "./Navbar";
 import HTML from './assets/HTML5.png'
 import CSS from './assets/CSS3.png'
