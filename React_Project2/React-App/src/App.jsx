@@ -5,6 +5,8 @@ import Navbar from "./Navbar";
 import HTML from './assets/HTML5.png'
 import CSS from './assets/CSS3.png'
 import JS from './assets/JS.png'
+import { UserProfile } from "./UserProfile";
+import { ContactForm } from "./ContactForm";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Course name="HTML5" desc="HTML5 - web language" show={true} image={HTML}/>
       <Course name="CSS" desc="CSS - Styling language" image={CSS}/>
       <Course name="JS" desc="JS - Event handling" image={JS} />
+      <ContactForm/>
+      <UserProfile/>
       <Footer />
     </>
   );
