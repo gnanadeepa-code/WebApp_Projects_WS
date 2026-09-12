@@ -10,7 +10,7 @@ function App() {
   return (
     <> {/* React Fragment - used to group multiple components without using extra node like div*/} 
       <Navbar />
-      <Course name="HTML5" desc="HTML5 - web language" image={HTML}/>
+      <Course name="HTML5" desc="HTML5 - web language" show={true} image={HTML}/>
       <Course name="CSS" desc="CSS - Styling language" image={CSS}/>
       <Course   image={JS} />
       <Footer />
