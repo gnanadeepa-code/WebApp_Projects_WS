@@ -10,6 +10,7 @@ import { ContactForm } from "./ContactForm";
 import { Welcome } from "./Welcome";
 import { Product } from "./Product";
 import { CardWrapper } from "./CardWrapper";
+import { Alert } from "./Alert";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
         inStock={true}
         categories={["Electronics", "Computers", "Gaming"]}
       />
+      <Alert>Your changes are saved successfully!</Alert>
+      <Alert type="error">Something went wrong!</Alert>
       <UserProfile />
       <Footer />
     </>
