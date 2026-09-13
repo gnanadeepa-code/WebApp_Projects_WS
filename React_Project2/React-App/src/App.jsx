@@ -7,15 +7,19 @@ import CSS from './assets/CSS3.png'
 import JS from './assets/JS.png'
 import { UserProfile } from "./UserProfile";
 import { ContactForm } from "./ContactForm";
+import { Welcome } from "./Welcome";
+import { Product } from "./Product";
 
 function App() {
   return (
     <> {/* React Fragment - used to group multiple components without using extra node like div*/} 
+      <Welcome name="Deepa" alias="ReturnMan"/>
       <Navbar />
       <Course name="HTML5" desc="HTML5 - web language" show={true} image={HTML}/>
       <Course name="CSS" desc="CSS - Styling language" image={CSS}/>
       <Course name="JS" desc="JS - Event handling" image={JS} />
       <ContactForm/>
+      <Product title="Laptop" price={50999.99} inStock={true} categories={["Electronics","Computers","Gaming"]}/>
       <UserProfile/>
       <Footer />
     </>
