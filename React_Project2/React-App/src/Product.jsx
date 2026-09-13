@@ -22,7 +22,7 @@ export const Product = ({ title, price, inStock, categories }) => {
     return product.price >10000;
   }).map((product) => {
     return (
-      <div key= {product.id}>
+      <div key= {product.id}> {/* Unique key must be provided to react for its internal update purposes. Avoid using array indices as keys if the list order can change. */}
         <h3>{product.name}</h3>
         <p>Price : Rs.{product.price}</p>
       </div>
