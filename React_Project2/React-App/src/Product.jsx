@@ -1,4 +1,4 @@
-//Props with destructuring mtd - widely used since it is cleaner, no dots required.
+//Props with destructuring mtd - widely used since it is cleaner, no dots required. 
 export const Product = (title, price, inStock, categories) => {
   return (
     <div>

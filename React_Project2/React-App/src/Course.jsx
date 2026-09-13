@@ -1,4 +1,6 @@
-function Course({ image,show=true, name = "HTML", desc = "Web language" }) {
+//Below function set's default values to props. when any of the prop values are not passed it will pickup values from this default values
+function Course({ image,
+  show=true, name = "HTML", desc = "Web language" }) {
   if (show ) { /* Conditional rendering */
     return (
       <div className="card">
