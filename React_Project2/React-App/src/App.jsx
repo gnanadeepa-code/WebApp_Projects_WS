@@ -11,6 +11,7 @@ import { Welcome } from "./Welcome";
 import { Product } from "./Product";
 import { CardWrapper } from "./CardWrapper";
 import { Alert } from "./Alert";
+import { CustomButton } from "./CustomButton";
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
       />
       <Alert>Your changes are saved successfully!</Alert>
       <Alert type="error">Something went wrong!</Alert>
+      <CustomButton text="Like"/>
+      <CustomButton text="Bookmark"/>
       <UserProfile />
       <Footer />
     </>
