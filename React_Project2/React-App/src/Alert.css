@@ -1,0 +1,14 @@
+.alert{
+    padding: 2em;
+    border-radius: 1em;
+    margin-bottom: 2em;
+    color: black;
+}
+
+.success{
+    background-color: aquamarine;
+}
+
+.error{
+    background-color: rgb(255, 127, 136);
+}
