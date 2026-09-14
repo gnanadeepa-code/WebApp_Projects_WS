@@ -14,6 +14,7 @@ import { Alert } from "./Alert";
 import { CustomButton } from "./CustomButton";
 import { UserCard } from "./UserCard";
 import { Menu } from "./Menu";
+import { Counter } from "./Counter";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         inStock={true}
         categories={["Electronics", "Computers", "Gaming"]}
       />
+      <Counter />
       <Alert>Your changes are saved successfully!</Alert>
       <Alert type="error">Something went wrong!</Alert>
       <CustomButton text="Like"/>
