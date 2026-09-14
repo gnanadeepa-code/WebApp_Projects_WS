@@ -15,6 +15,7 @@ import { CustomButton } from "./CustomButton";
 import { UserCard } from "./UserCard";
 import { Menu } from "./Menu";
 import { Counter } from "./Counter";
+import { LoginCard } from "./LoginCard";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         inStock={true}
         categories={["Electronics", "Computers", "Gaming"]}
       />
+      <LoginCard />
       <Counter />
       <Alert>Your changes are saved successfully!</Alert>
       <Alert type="error">Something went wrong!</Alert>
