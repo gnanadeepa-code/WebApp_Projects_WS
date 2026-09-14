@@ -7,7 +7,7 @@ function Course({ image,
         <img src={image} alt="Image" />
         <h3>{name ? name : "Guest"}</h3> 
         <p>{desc ? desc : "Later"}</p>
-         <p>{show &&  <span> {"\u2605"}</span>}</p>
+         <p>{show &&  <span> {"\u2605"}</span>}</p>   
       </div>
     );
   }else{
