@@ -18,6 +18,7 @@ import { Counter } from "./Counter";
 import { LoginCard } from "./LoginCard";
 import { TodoList } from "./TodoList";
 import { ShoppingCart } from "./ShoppingCart";
+import { CounterWithReducer } from "./CounterWithReducer";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
       <Menu/>
       <ShoppingCart/>
       <TodoList/>
+      <CounterWithReducer/>
       <UserCard/>
       <UserProfile />
       <Footer />
