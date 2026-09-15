@@ -16,6 +16,7 @@ import { UserCard } from "./UserCard";
 import { Menu } from "./Menu";
 import { Counter } from "./Counter";
 import { LoginCard } from "./LoginCard";
+import { TodoList } from "./TodoList";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
       <CustomButton text="Like"/>
       <CustomButton text="Bookmark"/>
       <Menu/>
+      <TodoList/>
       <UserCard/>
       <UserProfile />
       <Footer />
