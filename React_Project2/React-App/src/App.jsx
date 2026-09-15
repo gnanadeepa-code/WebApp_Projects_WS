@@ -17,6 +17,7 @@ import { Menu } from "./Menu";
 import { Counter } from "./Counter";
 import { LoginCard } from "./LoginCard";
 import { TodoList } from "./TodoList";
+import { ShoppingCart } from "./ShoppingCart";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
       <CustomButton text="Like"/>
       <CustomButton text="Bookmark"/>
       <Menu/>
+      <ShoppingCart/>
       <TodoList/>
       <UserCard/>
       <UserProfile />
