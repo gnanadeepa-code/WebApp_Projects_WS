@@ -40,6 +40,24 @@ const reducer = (state, action) => {
                 ),
             };
         }
+        case "REMOVE_ITEM":{
+            const filteredItems = state.items.filter(
+                (item) => item.id !== action.payload.id
+            );
+
+            return {
+                ...state,
+                items: filteredItems,
+                totalAmount: filteredItems.reduce(
+                    (total, item) => total + item.price * item.quantity,
+                    0
+                ),
+                totalItems: filteredItems.reduce(
+                    (total, item) => total + item.quantity,
+                    0
+                ),
+            };
+        }
         default:
             return state;
     }
@@ -80,6 +98,10 @@ export const ShoppingCartWithReducer = () => {
                                     <p>
                                         {item.name} : ${item.price} x {item.quantity}
                                     </p>
+                                    <button onClick={() => dispatch({
+                                        type:"REMOVE_ITEM",
+                                        payload: {id: item.id},
+                                    })}>Remove</button>
                                 </div>
                             ))
                         }
