@@ -77,10 +77,12 @@ const reducer = (state, action) => {
                 ),
                 items: updatedQuantityItems,
                 totalItems: updatedQuantityItems.reduce(
-                    (total,item) => total+ quantity, 0
+                    (total,item) => total+ item.quantity, 0
                 ),
             };
         }
+        case "CLEAR_CART":
+            return initialState;
         default:
             return state;
     }
@@ -141,6 +143,13 @@ export const ShoppingCartWithReducer = () => {
                 )}
                 <h3>Total Items: {state.totalItems}</h3>
                 <h3>Total Amount: {state.totalAmount.toFixed(2)}</h3>
+                {
+                    state.items.length > 0 && (
+                        <button onClick={() => dispatch({
+                            type:"CLEAR_CART"
+                        })}>Clear Cart</button>
+                    )
+                }
             </div>
         </div>
     );
