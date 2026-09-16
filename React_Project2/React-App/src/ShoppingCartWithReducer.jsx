@@ -7,6 +7,7 @@ const initialState = {
 }
 
 const reducer = (state, action) => {
+    console.log("Action dispatched",action);
     switch(action.type) {
         case "ADD_ITEM": {
             const existingItemIndex = state.items.findIndex(
