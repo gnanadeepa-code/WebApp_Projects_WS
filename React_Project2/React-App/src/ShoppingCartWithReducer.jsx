@@ -58,6 +58,29 @@ const reducer = (state, action) => {
                 ),
             };
         }
+        case "UPDATE_QUANTITY":{
+            if(action.payload.quantity === 0){
+                return reducer(state, {
+                    type: "REMOVE_ITEM",
+                    payload: {id: action.payload.id},
+                });
+            }
+            const updatedQuantityItems = state.items.map((item) => 
+                item.id === action.payload.id ?
+                {...item, quantity:action.payload.quantity} : item
+            );
+            return{
+                ...state,
+                items: updatedQuantityItems,
+                totalAmount: updatedQuantityItems.reduce(
+                    (total,item) => total+ item.price * item.quantity, 0
+                ),
+                items: updatedQuantityItems,
+                totalItems: updatedQuantityItems.reduce(
+                    (total,item) => total+ quantity, 0
+                ),
+            };
+        }
         default:
             return state;
     }
@@ -98,6 +121,15 @@ export const ShoppingCartWithReducer = () => {
                                     <p>
                                         {item.name} : ${item.price} x {item.quantity}
                                     </p>
+
+                                    <button onClick={() => dispatch({
+                                        type:"UPDATE_QUANTITY",
+                                        payload: {id: item.id, quantity: item.quantity - 1},
+                                    })}>-</button>
+                                    <button onClick={() => dispatch({
+                                        type:"UPDATE_QUANTITY",
+                                        payload: {id: item.id, quantity: item.quantity + 1},
+                                    })}>+</button>
                                     <button onClick={() => dispatch({
                                         type:"REMOVE_ITEM",
                                         payload: {id: item.id},
