@@ -23,6 +23,7 @@ import { ShoppingCartWithReducer } from "./ShoppingCartWithReducer";
 import { useState } from "react";
 import { UserContextProvider } from "./UserContextProvider";
 import { StopWatch } from "./StopWatch";
+import { FocusInput } from "./FocusInput";
 
 function App() {
   //Below value can be used by any component by using the createContext functionality provided by React
@@ -78,6 +79,7 @@ function App() {
         <UserProfile />
       </UserContextProvider>
       <StopWatch/>
+      <FocusInput/>
       <Footer />
     </>
   );
