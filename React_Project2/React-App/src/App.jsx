@@ -22,6 +22,7 @@ import { CounterWithReducer } from "./CounterWithReducer";
 import { ShoppingCartWithReducer } from "./ShoppingCartWithReducer";
 import { useState } from "react";
 import { UserContextProvider } from "./UserContextProvider";
+import { StopWatch } from "./StopWatch";
 
 function App() {
   //Below value can be used by any component by using the createContext functionality provided by React
@@ -76,6 +77,7 @@ function App() {
         <UserCard />
         <UserProfile />
       </UserContextProvider>
+      <StopWatch/>
       <Footer />
     </>
   );
