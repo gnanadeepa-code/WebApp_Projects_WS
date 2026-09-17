@@ -20,16 +20,17 @@ import { TodoList } from "./TodoList";
 import { ShoppingCart } from "./ShoppingCart";
 import { CounterWithReducer } from "./CounterWithReducer";
 import { ShoppingCartWithReducer } from "./ShoppingCartWithReducer";
-import { UserContext } from "./UserContext";
+import { useState } from "react";
+import { UserContextProvider } from "./UserContextProvider";
 
 function App() {
   //Below value can be used by any component by using the createContext functionality provided by React
-  const user = {
+  /* const user = {
     name: "Deepa",
     role: "admin",
     theme: "dark",
-  };
-
+  }; */
+ 
   return (
     <>
       {" "}
@@ -68,10 +69,13 @@ function App() {
       <TodoList />
       <CounterWithReducer />
       <ShoppingCartWithReducer />
-      <UserContext value={user}> {/* user value is passed as context value instead of props which causes problem in props drilling in nested child component */}
+      {/* <UserContext value={user}> */}
+      <UserContextProvider>
+        {" "}
+        {/* user value is passed as context value instead of props which causes problem in props drilling in nested child component */}
         <UserCard />
         <UserProfile />
-      </UserContext>
+      </UserContextProvider>
       <Footer />
     </>
   );

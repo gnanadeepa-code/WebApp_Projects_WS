@@ -7,7 +7,15 @@ import { UserContext } from "./UserContext"
 export const UserCard = (props) => {
 
     //To use the context import useContext hook and the UserContext component.We don't need props to send values from parent to the nested child where it gets messy. 
-    const user = useContext(UserContext);
+   // const user = useContext(UserContext);
+    const {user, setUser} = useContext(UserContext);
+
+    const toggleTheme = () => {
+        setUser({
+            ...user,
+            theme:user.theme === "dark" ? "light" : "dark",
+        });
+    };
 
     const handleSaveDetails = () => {
         alert("User Details saved");
@@ -21,7 +29,7 @@ export const UserCard = (props) => {
              <p>Name: {user.name}</p>
              <p>ROle: {user.role}</p>
              <p>Theme: {user.theme}</p>
-
+            <button onClick={toggleTheme}>Toggle Theme</button>
         </div>
     )
 }
