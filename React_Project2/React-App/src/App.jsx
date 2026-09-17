@@ -20,12 +20,20 @@ import { TodoList } from "./TodoList";
 import { ShoppingCart } from "./ShoppingCart";
 import { CounterWithReducer } from "./CounterWithReducer";
 import { ShoppingCartWithReducer } from "./ShoppingCartWithReducer";
+import { UserContext } from "./UserContext";
 
 function App() {
+  //Below value can be used by any component by using the createContext functionality provided by React
+  const user = {
+    name: "Deepa",
+    role: "admin",
+    theme: "dark",
+  };
+
   return (
     <>
       {" "}
-      {/* React Fragment - used to group multiple components without using extra node like div*/}
+      {/* <> </>--React Fragment - used to group multiple components without using extra node like div*/}
       <Welcome name="Deepa" alias="ReturnMan" />
       <CardWrapper title="User Profile">
         <p>Deepa</p>
@@ -53,15 +61,17 @@ function App() {
       <Counter />
       <Alert>Your changes are saved successfully!</Alert>
       <Alert type="error">Something went wrong!</Alert>
-      <CustomButton text="Like"/>
-      <CustomButton text="Bookmark"/>
-      <Menu/>
-      <ShoppingCart/>
-      <TodoList/>
-      <CounterWithReducer/>
-      <ShoppingCartWithReducer/>
-      <UserCard/>
-      <UserProfile />
+      <CustomButton text="Like" />
+      <CustomButton text="Bookmark" />
+      <Menu />
+      <ShoppingCart />
+      <TodoList />
+      <CounterWithReducer />
+      <ShoppingCartWithReducer />
+      <UserContext value={user}> {/* user value is passed as context value instead of props which causes problem in props drilling in nested child component */}
+        <UserCard />
+        <UserProfile />
+      </UserContext>
       <Footer />
     </>
   );
