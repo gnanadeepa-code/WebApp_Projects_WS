@@ -15,13 +15,33 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-        function ChatInput() {
+
+        function ChatInput({chatMessages, setChatMessages}) {
+            const [inputText, setInputText] = React.useState('');
+            function saveInputText(event) {
+                setInputText(event.target.value);
+            }
+
+            //Lifting the state up - moving the component to outer component lets us to share state bw multiple components
+            function sendMessage() {
+                console.log(inputText+ " msgs:",chatMessages);
+                setChatMessages([
+                    ...chatMessages, //spread operator ... keeps the existing data in the array
+                    {
+                        message: inputText,
+                        sender: 'user',
+                        id: crypto.randomUUID() //generates random 36 digit unique id in js
+                    }
+                ]);
+                setInputText('');
+            }
+
             return (
                 <>
                     <input
                         placeholder="Send a message to chatbot"
-                        size="30" />
-                    <button>Send</button>
+                        size="30" onChange={saveInputText} value={inputText}/>
+                    <button onClick={sendMessage}>Send</button>
                 </>
             );
         }
@@ -58,28 +78,62 @@
             );
         }
 
+        function ChatMessages({ chatMessages }) {
+            //The map() method loops through an array, applies a function to every item, and returns a brand-new array with the transformed values. It does not modify your original array
+            return (
+                <>
+                    {chatMessages.map((chatMessage) => {
+                        return (
+                            <ChatMessage
+                                message={chatMessage.message}
+                                sender={chatMessage.sender}
+                                key={chatMessage.id}
+                            />
+                        );
+                    })}
+                </>
+            );
+        }
+
         function App() {
+
+            const [chatMessages, setChatMessages] = React.useState([{
+                message: 'hello chatbox',
+                sender: 'user',
+                id: "id1"
+            }, {
+                message: 'Hello! How can I help You?',
+                sender: 'robot',
+                id: "id2"
+            }, {
+                message: 'What is current date',
+                sender: 'user',
+                id: "id3"
+            }, {
+                message: 'Today is 19th September 2016',
+                sender: 'robot',
+                id: "id4"
+            },]);
+
+            /*const [chatMessages,setChatMessages] = chatMessagesArray;
+
+            const chatMessages = chatMessagesArray[0];
+            const setChatMessages = chatMessagesArray[1]; */
+
             return (
                 <>
                     {/*  {ChatInput()} */}
-                    <ChatInput />
-                    <ChatMessage
-                        message="hello chatbox"
-                        sender="user"
+                    <ChatInput
+                        chatMessages={chatMessages}
+                        setChatMessages={setChatMessages}
                     />
-                    <ChatMessage 
-                        message="Hello! How can I help You?" sender="robot"
-                    />
-                    <ChatMessage 
-                        message="What is current date" sender="user" 
-                    />
-                    <ChatMessage 
-                        message="Today is 19th September 2016" sender="robot" 
+                    <ChatMessages
+                        chatMessages={chatMessages}
                     />
                 </>
             );
         }
-        
+
         const container = document.querySelector('.js-container');
         const root = ReactDOM.createRoot(container);
         root.render(<App />);
