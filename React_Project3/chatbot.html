@@ -5,6 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Bot</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .send-button {
+            background-color: rgb(25, 135, 84);
+            color: white;
+            padding: 0.5rem;
+            margin: 0.6rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .chat-input {
+            padding: 0.5rem;
+            border-radius: 10px;
+            border-width: 1px;
+            font-size: 1em;
+            flex-grow: 1;
+        }
+
+        .chat-input-container {
+            display: flex;
+            margin-bottom: 60px;
+        }
+
+        .app-container {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message-user {
+            display: flex;
+            justify-content: end;
+            align-items: start;
+        }
+
+        .chat-message-robot {
+            display: flex;
+            align-items: start;
+        }
+
+        .chat-message-text {
+            background-color: rgb(238, 238, 238);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+
+        .chat-message-profile {
+            width: 45px;
+        }
+
+        .chat-messages-container{
+            flex-grow: 1;
+            margin-top: 20px;
+            overflow: scroll;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,12 +126,12 @@
             }
 
             return (
-                <>
-                    <input
+                <div className="chat-input-container">
+                    <input className="chat-input"
                         placeholder="Send a message to chatbot"
                         size="30" onChange={saveInputText} value={inputText} />
-                    <button onClick={sendMessage}>Send</button>
-                </>
+                    <button className="send-button" onClick={sendMessage}>Send</button>
+                </div>
             );
         }
 
@@ -86,19 +158,30 @@
             } */
 
             return (
-                <div>
+                <div className={
+                    sender === 'user'
+                        ? 'chat-message-user'
+                        : 'chat-message-robot'
+                }>
                     {/* Guard operator- && is used instead of if stmt. if the value1 is true then result will be value2  */}
-                    {sender === 'robot' && <img src="./images/robot.png" width="40" />}
-                    {message}
-                    {sender === 'user' && <img src="./images/user.png" width="40" />}
+                    {sender === 'robot' && <img src="./images/robot.png" className="chat-message-profile" />}
+                    <div class="chat-message-text">
+                        {message}
+                    </div>
+                    {sender === 'user' && <img src="./images/user.png" className="chat-message-profile" />}
                 </div>
             );
         }
 
         function ChatMessages({ chatMessages }) {
+            //To add aoto scrollong feature in chatbox when a new msg is typed, useEffect hook needs to be used. useEffect lets us to run some code after the component is created or updated.
+            React.useEffect(()=>{
+
+            });
+
             //The map() method loops through an array, applies a function to every item, and returns a brand-new array with the transformed values. It does not modify your original array
             return (
-                <>
+                <div className="chat-messages-container">
                     {chatMessages.map((chatMessage) => {
                         return (
                             <ChatMessage
@@ -108,7 +191,7 @@
                             />
                         );
                     })}
-                </>
+                </div>
             );
         }
 
@@ -138,16 +221,17 @@
             const setChatMessages = chatMessagesArray[1]; */
 
             return (
-                <>
+                <div className="app-container">
                     {/*  {ChatInput()} */}
+
+                    <ChatMessages
+                        chatMessages={chatMessages}
+                    />
                     <ChatInput
                         chatMessages={chatMessages}
                         setChatMessages={setChatMessages}
                     />
-                    <ChatMessages
-                        chatMessages={chatMessages}
-                    />
-                </>
+                </div>
             );
         }
 
